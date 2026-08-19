@@ -80,26 +80,31 @@ export default function AboutContent() {
         <div className="w-[360px] ml-8">
           <h2 className="mb-2 text-2xl font-bold dark:text-neutral-200">{aboutConfig.connect.title}</h2>
           <div className="py-[30px]">
-            <p className="text-sm leading-6 text-gray-600 dark:text-neutral-400 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg">
-              {aboutConfig.connect.description.split('follow us on twitter').map((part, index, array) => {
-                if (index === array.length - 1) {
-                  const [beforeEmail, afterEmail] = part.split('email');
-                  return (
-                    <Fragment key={`email-${index}`}>  {/* TAMBAH key */}
-                      {beforeEmail}
-                      <a href={aboutConfig.connect.links.email.url} className="text-indigo-600 underline">{aboutConfig.connect.links.email.text}</a>
-                      {afterEmail}
-                    </Fragment>
-                  );
-                }
-                return (
-                  <Fragment key={`twitter-${index}`}>  {/* TAMBAH key */}
-                    {part}
-                    <a href={aboutConfig.connect.links.twitter.url} target="_blank" className="text-indigo-600 underline">{aboutConfig.connect.links.twitter.text}</a>
-                  </Fragment>
-                );
-              })}
-            </p>
+            <div className="flex flex-col gap-3 text-sm leading-6 text-gray-600 dark:text-neutral-400 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg">
+              <p>{aboutConfig.connect.description}</p>
+              <div className="flex flex-wrap gap-3 mt-2">
+                {aboutConfig.connect.links.github && (
+                  <a href={aboutConfig.connect.links.github.url} target="_blank" className="text-indigo-600 underline hover:text-indigo-800 transition">
+                    {aboutConfig.connect.links.github.text}
+                  </a>
+                )}
+                {aboutConfig.connect.links.linkedin && (
+                  <a href={aboutConfig.connect.links.linkedin.url} target="_blank" className="text-indigo-600 underline hover:text-indigo-800 transition">
+                    {aboutConfig.connect.links.linkedin.text}
+                  </a>
+                )}
+                {aboutConfig.connect.links.instagram && (
+                  <a href={aboutConfig.connect.links.instagram.url} target="_blank" className="text-indigo-600 underline hover:text-indigo-800 transition">
+                    {aboutConfig.connect.links.instagram.text}
+                  </a>
+                )}
+                {aboutConfig.connect.links.email && (
+                  <a href={aboutConfig.connect.links.email.url} className="text-indigo-600 underline hover:text-indigo-800 transition">
+                    {aboutConfig.connect.links.email.text}
+                  </a>
+                )}
+              </div>
+            </div>
           </div>
         </div>
       </div>
