@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Fragment } from "react"; // <-- TAMBAHIN IMPORT INI
 import { aboutConfig } from "@/config/about";
 
 export default function AboutContent() {
