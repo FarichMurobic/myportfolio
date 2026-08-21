@@ -46,6 +46,10 @@ export const aboutConfig = {
         text: "GitHub",
         url: "https://github.com/FarichMurobic"
       },
+      email: {
+          text: "email",
+          url: "mailto:farichmurobiq11@gmail.com"
+      },
       linkedin: {
         text: "LinkedIn",
         url: "https://www.linkedin.com/in/farich-murobic-b2a292335/?trk=products_details_guest_profile_link"
@@ -54,10 +58,6 @@ export const aboutConfig = {
         text: "Instagram",
         url: "https://instagram.com/murobiqfarich"
       },
-      email: {
-        text: "email",
-        url: "mailto:farichmurobiq11@gmail.com"
-      }
     }
   }
 

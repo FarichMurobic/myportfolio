@@ -7,8 +7,8 @@ export const projectsConfig = {
     {
       title: "Personal Portfolio Website",
       description: "Personal portfolio website built with Next.js 14 and Tailwind CSS. Showcasing my experience as a Junior Java Developer, including projects, certifications, and blog posts. Fully responsive with dark mode support.",
-      href: "#!",
-      imageUrl: "/assets/images/projects/project1.jpg"
+      href: "https://farichmurobic.vercel.app",
+      imageUrl: "/assets/images/projects/Portfolio.jpg"
     },
     {
       title: "Java Fundamentals & Object-Oriented Programming",
