@@ -35,9 +35,9 @@ export const globalConfig = {
     copyright: "© 2026 Farich Murobic. All rights reserved.",
     social: {
       github: "https://github.com/FarichMurobic",
-      email: "farichmurobiq11@gmail.com",
       linkedin: "https://www.linkedin.com/in/farich-murobic-b2a292335/?trk=products_details_guest_profile_link",
-      instagram: "https://instagram.com/murobiqfarich"
+      instagram: "https://instagram.com/murobiqfarich",
+      email: "farichmurobiq11@gmail.com"
     }
   }
 } as const;

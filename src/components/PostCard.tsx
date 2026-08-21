@@ -46,20 +46,20 @@ export default function PostCard({ title, description, date, href, pattern = 'do
                   </g>
                 </svg>
               </h2>
-              <p className="text-base text-neutral-600 dark:text-neutral-400 mb-3">
+              <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 mb-3">
                 <span>{description}</span>
               </p>
-              <div className="flex items-center gap-4 text-sm font-medium text-neutral-600 dark:text-neutral-400">
+              <div className="flex flex-wrap items-center gap-1 sm:gap-4 text-[10px] sm:text-sm font-medium text-neutral-600 dark:text-neutral-400">
                 <span>Posted on {date}</span>
                 <span className="flex items-center">
-                  <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-2.5 h-2.5 sm:w-4 sm:h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   {readingTime} min read
                 </span>
               </div>
             </div>
-            <div className="relative w-64 h-48 rounded-xl overflow-hidden flex-shrink-0">
+            <div className="hidden sm:block relative w-64 h-48 rounded-xl overflow-hidden flex-shrink-0">
               <Image
                 src={imageUrl}
                 alt={title}

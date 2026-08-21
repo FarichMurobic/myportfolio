@@ -15,4 +15,54 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
-} 
+}
+
+/* Konten blog lebih kecil di mobile */
+@media (max-width: 640px) {
+  .prose {
+    font-size: 0.9rem;
+  }
+  .prose h1 {
+    font-size: 1.5rem !important;
+  }
+  .prose h2 {
+    font-size: 1.25rem !important;
+  }
+  .prose h3 {
+    font-size: 1.1rem !important;
+  }
+  .prose pre {
+    font-size: 0.8rem !important;
+    padding: 0.75rem !important;
+  }
+  .prose code {
+    font-size: 0.8rem !important;
+  }
+  .prose ul, .prose ol {
+    padding-left: 1.25rem !important;
+  }
+  .prose li {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Biar code block gak overflow ke kanan */
+.prose pre {
+  overflow-x: auto !important;
+  white-space: pre-wrap !important;
+  word-break: break-word !important;
+  max-width: 100% !important;
+  font-size: 0.8rem !important;
+  padding: 1rem !important;
+}
+
+.prose code {
+  white-space: pre-wrap !important;
+  word-break: break-word !important;
+}
+
+/* Khusus inline code */
+.prose :not(pre) > code {
+  white-space: normal !important;
+  word-break: break-word !important;
+}

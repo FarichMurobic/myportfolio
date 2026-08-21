@@ -46,7 +46,7 @@ function ThemeAwareImage() {
   }
 
   return (
-    <div className="relative w-[700px] h-[700px]">
+    <div className="relative w-[150px] h-[150px] sm:w-[250px] sm:h-[250px] md:w-[400px] md:h-[400px] lg:w-[550px] lg:h-[550px]">
       <img
         src={imageSrc}
         alt="Tech background"
@@ -70,62 +70,70 @@ function ThemeAwareImage() {
 // Server component version of HomeContent
 export default function HomeContent() {
   return (
-    <div className="flex-1 flex items-center" style={{ transform: 'translateY(-50px)' }}>
-      <div className="flex flex-row items-center justify-between w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 gap-12">
-        <div className="w-[45%] text-left">
-          <h1 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-white sm:text-4xl">
-            {homeConfig.greeting}
-          </h1>
-          <p className="mt-3 text-lg leading-7 text-neutral-600 dark:text-neutral-400">
+    <div className="flex-1 flex items-center justify-center px-7 lg:px-0 pt-16 md:pt-0 pb-8 md:pb-12" style={{ transform: 'translateY(0px)' }}>
+      <div className="flex flex-col-reverse md:flex-row items-center justify-between w-full max-w-4xl mx-auto px-0 gap-6 md:gap-12">
+
+        {/* Text Section - Full width di mobile */}
+        <div className="w-full md:w-[50%] text-left max-w-full">
+          <div className="text-left">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-neutral-900 dark:text-white break-words">
+              Hello, I'm
+            </h1>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-neutral-900 dark:text-white mt-1 break-words">
+              Farich Murobic
+            </h1>
+          </div>
+          <p className="mt-3 text-base sm:text-lg leading-7 text-neutral-600 dark:text-neutral-400 break-words">
             {homeConfig.description}
           </p>
-          <div className="flex flex-row gap-4 mt-4">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 justify-center md:justify-start">
             <Link
               href="/about"
-              className="group inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-neutral-900 rounded-lg hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-100 transition-all duration-300 hover:scale-105 cursor-pointer"
+              className="group inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-white bg-neutral-900 rounded-lg hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-100 transition-all duration-300 hover:scale-105 cursor-pointer"
             >
               View About
-              <svg 
-                className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" 
-                fill="none" 
-                stroke="currentColor" 
+              <svg
+                className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
+                fill="none"
+                stroke="currentColor"
                 viewBox="0 0 24 24"
               >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2.5} 
-                  d="M13 7l5 5m0 0l-5 5m5-5H6" 
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2.5}
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
                 />
               </svg>
             </Link>
 
             <Link
               href="/posts"
-              className="group inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-neutral-900 bg-white border border-neutral-300 rounded-lg hover:bg-neutral-50 dark:bg-neutral-900 dark:text-white dark:border-neutral-700 dark:hover:bg-neutral-800 transition-all duration-300 hover:scale-105 cursor-pointer"
+              className="group inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-neutral-900 bg-white border border-neutral-300 rounded-lg hover:bg-neutral-50 dark:bg-neutral-900 dark:text-white dark:border-neutral-700 dark:hover:bg-neutral-800 transition-all duration-300 hover:scale-105 cursor-pointer"
             >
               {homeConfig.buttons.readPosts}
-              <svg 
-                className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" 
-                fill="none" 
-                stroke="currentColor" 
+              <svg
+                className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
+                fill="none"
+                stroke="currentColor"
                 viewBox="0 0 24 24"
               >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2.5} 
-                  d="M13 7l5 5m0 0l-5 5m5-5H6" 
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2.5}
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
                 />
               </svg>
             </Link>
           </div>
         </div>
 
-        <div className="w-[45%] flex items-center justify-center bg-transparent">
+        {/* Image Section - Muncul di bawah text di mobile */}
+        <div className="hidden md:flex w-full md:w-[50%] items-center justify-center bg-transparent">
           <ThemeAwareImage />
         </div>
       </div>
     </div>
   );
-} 
+}
