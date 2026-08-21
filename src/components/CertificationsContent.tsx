@@ -4,7 +4,7 @@ import { certificationsConfig } from '@/config/certifications';
 
 export default function CertificationsContent() {
   return (
-    <section className="relative z-20 max-w-4xl mx-auto mt-32 mb-12 px-7 lg:px-0">
+    <section className="relative z-20 max-w-4xl mx-auto mt-20 md:mt-32 mb-12 px-7 lg:px-0">
       <div className="relative z-20 w-full mx-auto lg:mx-0">
         <h2 className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-3xl lg:text-4xl">
           {certificationsConfig.title}

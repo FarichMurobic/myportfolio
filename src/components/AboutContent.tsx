@@ -3,7 +3,7 @@ import { aboutConfig } from "@/config/about";
 
 export default function AboutContent() {
   return (
-    <section className="relative z-20 w-full max-w-4xl mx-auto mt-28 sm:mt-32 mb-12 px-7 sm:px-7">
+    <section className="relative z-20 w-full max-w-4xl mx-auto mt-20 sm:mt-32 mb-12 px-7 sm:px-7">
       {/* Title */}
       <div className="relative z-20 w-full mx-auto lg:mx-0 border border-dashed border-neutral-300 dark:border-neutral-600 md:border-0 rounded-xl p-5 md:p-0">
         <h2 className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-3xl lg:text-4xl text-center sm:text-left">
@@ -21,7 +21,7 @@ export default function AboutContent() {
               {aboutConfig.skills.map((skill, index) => (
                 <span
                   key={index}
-                  className="px-2.5 py-1 sm:px-3 sm:py-1 text-xs sm:text-sm bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-200 rounded-full"
+                  className="px-2.5 py-0.5 sm:px-3 sm:py-1 text-[10px] sm:text-sm bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-200 rounded-full"
                 >
                   {skill}
                 </span>
