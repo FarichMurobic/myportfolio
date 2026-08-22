@@ -1,51 +1,310 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="800" height="800" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    @keyframes scale {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.02); }
-      100% { transform: scale(1); }
-    }
-    .radar {
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 1.5;
-      opacity: 0.08;
-      animation: scale 10s ease-in-out infinite;
-    }
-    .radar-fill {
-      fill: currentColor;
-      opacity: 0.05;
-    }
-    @media (prefers-color-scheme: dark) {
-      .radar, .radar-fill { stroke: white; fill: white; }
-    }
-    @media (prefers-color-scheme: light) {
-      .radar, .radar-fill { stroke: black; fill: black; }
-    }
-  </style>
+<svg
+        width="800"
+        height="800"
+        viewBox="0 0 800 800"
+        xmlns="http://www.w3.org/2000/svg"
+>
+    <style>
+        :root {
+        color: black;
+        }
 
-  <!-- Radar Chart -->
-  <g transform="translate(270, 400)">
-    <!-- Radar Grid -->
-    <g>
-      <polygon class="radar" points="0,-200 173.2,-100 173.2,100 0,200 -173.2,100 -173.2,-100" />
-      <polygon class="radar" points="0,-150 129.9,-75 129.9,75 0,150 -129.9,75 -129.9,-75" />
-      <polygon class="radar" points="0,-100 86.6,-50 86.6,50 0,100 -86.6,50 -86.6,-50" />
-      <polygon class="radar" points="0,-50 43.3,-25 43.3,25 0,50 -43.3,25 -43.3,-25" />
+        .line {
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.2;
+        opacity: 0.09;
+        }
+
+        .fine-line {
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 0.8;
+        opacity: 0.055;
+        }
+
+        .ring {
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1;
+        opacity: 0.07;
+        }
+
+        .node {
+        fill: currentColor;
+        opacity: 0.16;
+        }
+
+        .particle {
+        fill: currentColor;
+        opacity: 0.10;
+        }
+
+        .core {
+        fill: currentColor;
+        opacity: 0.13;
+        }
+
+        .network {
+        transform-origin: 400px 400px;
+        animation: networkFloat 18s ease-in-out infinite;
+        }
+
+        .orbit {
+        transform-origin: 400px 400px;
+        animation: rotate 45s linear infinite;
+        }
+
+        .orbit-reverse {
+        transform-origin: 400px 400px;
+        animation: rotateReverse 65s linear infinite;
+        }
+
+        .pulse {
+        animation: pulse 6s ease-in-out infinite;
+        }
+
+        @keyframes networkFloat {
+        0%,
+        100% {
+        transform: translate(0, 0) scale(1);
+        }
+
+        50% {
+        transform: translate(3px, -5px) scale(1.015);
+        }
+        }
+
+        @keyframes rotate {
+        from {
+        transform: rotate(0deg);
+        }
+
+        to {
+        transform: rotate(360deg);
+        }
+        }
+
+        @keyframes rotateReverse {
+        from {
+        transform: rotate(360deg);
+        }
+
+        to {
+        transform: rotate(0deg);
+        }
+        }
+
+        @keyframes pulse {
+        0%,
+        100% {
+        opacity: 0.08;
+        }
+
+        50% {
+        opacity: 0.18;
+        }
+        }
+
+        @media (prefers-color-scheme: dark) {
+        :root {
+        color: white;
+        }
+        }
+
+        @media (prefers-color-scheme: light) {
+        :root {
+        color: black;
+        }
+        }
+    </style>
+
+    <!-- Main network -->
+    <g class="network">
+
+        <!-- Primary connections -->
+        <g class="line">
+            <path d="M175 260 L285 205 L400 285 L515 205 L625 260" />
+            <path d="M145 420 L260 350 L400 400 L540 350 L655 420" />
+            <path d="M175 540 L285 595 L400 515 L515 595 L625 540" />
+
+            <path d="M285 205 L260 350 L285 595" />
+            <path d="M515 205 L540 350 L515 595" />
+
+            <path d="M400 285 L400 400 L400 515" />
+        </g>
+
+        <!-- Secondary connections -->
+        <g class="fine-line">
+            <path d="M175 260 L145 420 L175 540" />
+            <path d="M625 260 L655 420 L625 540" />
+
+            <path d="M285 205 L400 400 L515 205" />
+            <path d="M285 595 L400 400 L515 595" />
+        </g>
+
+        <!-- Main nodes -->
+        <g class="pulse">
+            <circle class="node" cx="175" cy="260" r="4" />
+            <circle class="node" cx="625" cy="260" r="4" />
+
+            <circle class="node" cx="145" cy="420" r="3" />
+            <circle class="node" cx="655" cy="420" r="3" />
+
+            <circle class="node" cx="175" cy="540" r="4" />
+            <circle class="node" cx="625" cy="540" r="4" />
+
+            <circle class="node" cx="285" cy="205" r="3.5" />
+            <circle class="node" cx="515" cy="205" r="3.5" />
+
+            <circle class="node" cx="285" cy="595" r="3.5" />
+            <circle class="node" cx="515" cy="595" r="3.5" />
+
+            <circle class="node" cx="260" cy="350" r="3" />
+            <circle class="node" cx="540" cy="350" r="3" />
+        </g>
+
     </g>
 
-    <!-- Radar Fill -->
-    <polygon class="radar-fill" points="0,-180 155.9,-90 155.9,90 0,180 -155.9,90 -155.9,-90" />
-
-    <!-- Radar Lines -->
+    <!-- Central system -->
     <g>
-      <line class="radar" x1="0" y1="0" x2="0" y2="-200" />
-      <line class="radar" x1="0" y1="0" x2="173.2" y2="-100" />
-      <line class="radar" x1="0" y1="0" x2="173.2" y2="100" />
-      <line class="radar" x1="0" y1="0" x2="0" y2="200" />
-      <line class="radar" x1="0" y1="0" x2="-173.2" y2="100" />
-      <line class="radar" x1="0" y1="0" x2="-173.2" y2="-100" />
+
+        <circle
+                class="ring"
+                cx="400"
+                cy="400"
+                r="72"
+        />
+
+        <circle
+                class="ring"
+                cx="400"
+                cy="400"
+                r="105"
+                stroke-dasharray="2 12"
+        />
+
+        <circle
+                class="ring"
+                cx="400"
+                cy="400"
+                r="145"
+                stroke-dasharray="1 18"
+        />
+
+        <circle
+                class="core pulse"
+                cx="400"
+                cy="400"
+                r="8"
+        />
+
+        <circle
+                class="ring"
+                cx="400"
+                cy="400"
+                r="18"
+        />
+
     </g>
-  </g>
+
+    <!-- Rotating technical orbit -->
+    <g class="orbit">
+
+        <ellipse
+                class="ring"
+                cx="400"
+                cy="400"
+                rx="225"
+                ry="105"
+        />
+
+        <ellipse
+                class="fine-line"
+                cx="400"
+                cy="400"
+                rx="275"
+                ry="145"
+        />
+
+        <circle
+                class="particle"
+                cx="625"
+                cy="400"
+                r="4"
+        />
+
+        <circle
+                class="particle"
+                cx="175"
+                cy="400"
+                r="3"
+        />
+
+    </g>
+
+    <!-- Reverse orbit -->
+    <g class="orbit-reverse">
+
+        <ellipse
+                class="ring"
+                cx="400"
+                cy="400"
+                rx="120"
+                ry="255"
+        />
+
+        <ellipse
+                class="fine-line"
+                cx="400"
+                cy="400"
+                rx="155"
+                ry="295"
+        />
+
+        <circle
+                class="particle"
+                cx="400"
+                cy="105"
+                r="3"
+        />
+
+        <circle
+                class="particle"
+                cx="400"
+                cy="695"
+                r="4"
+        />
+
+    </g>
+
+    <!-- Floating particles -->
+    <g class="particle">
+
+        <circle cx="105" cy="190" r="2" />
+        <circle cx="695" cy="190" r="2.5" />
+
+        <circle cx="90" cy="610" r="2.5" />
+        <circle cx="710" cy="610" r="2" />
+
+        <circle cx="225" cy="115" r="2" />
+        <circle cx="575" cy="115" r="2.5" />
+
+        <circle cx="225" cy="685" r="2.5" />
+        <circle cx="575" cy="685" r="2" />
+
+    </g>
+
+    <!-- Subtle radial guides -->
+    <g class="fine-line">
+
+        <line x1="400" y1="70" x2="400" y2="175" />
+        <line x1="400" y1="625" x2="400" y2="730" />
+
+        <line x1="70" y1="400" x2="175" y2="400" />
+        <line x1="625" y1="400" x2="730" y2="400" />
+
+    </g>
+
 </svg>
