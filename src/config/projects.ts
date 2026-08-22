@@ -1,6 +1,6 @@
 export const projectsConfig = {
   title: "My Projects",
-  description: "Explore the software and digital infrastructure I've engineered. From robust RESTful APIs to scalable backend services, each project details the tech stack used, core functionality, and key technical challenges solved.",
+  description: "Explore the projects I've built, from robust RESTful APIs to scalable backend services. Each project showcases the technologies used, core functionality, and technical challenges I've solved.",
   backButton: "Back to Home",
   noProjects: "No projects found.",
   items: [

@@ -1,6 +1,6 @@
 export const aboutConfig = {
   title: "About Me",
-  description: "Backend Developer specializing in Java and Spring Boot with a diverse background in sales operations and warehouse administration. I leverage my experience in physical inventory and workflow management to design structured, highly scalable backend architectures with a strong focus on data integrity and system performance.",
+  description: "Backend Developer specializing in Java and Spring Boot, with a background in sales operations and warehouse administration. I apply my experience in inventory and workflow management to build structured, scalable backend systems with a strong focus on data integrity, maintainability, and performance.",
   image: "/assets/images/about/Me.png",
   skills: [
     "Java",

@@ -28,11 +28,26 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
 
         <Navbar />
 
-        <section className="relative z-20 max-w-4xl mx-auto mt-32 mb-12 px-7 lg:px-0">
-          <div className="relative z-20 w-full mx-auto lg:mx-0">
-            <div className="prose dark:prose-invert max-w-none prose-sm sm:prose-base lg:prose-lg">
-              <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <section className="relative z-20 max-w-4xl mx-auto mt-20 md:mt-32 mb-12 px-7 lg:px-0">
+          <div className="relative p-7 rounded-2xl">
+
+            {/* Border */}
+            <div className="absolute inset-0 z-20 w-full h-full bg-transparent border border-dashed border-neutral-300 dark:border-neutral-700 rounded-2xl"></div>
+
+            {/* Isi blog */}
+            <div className="relative z-30">
+              <div className="prose dark:prose-invert max-w-none prose-sm sm:prose-base lg:prose-lg
+                max-md:[&_h1]:!text-[15px]
+                max-md:[&_h2]:!text-[14px]
+                max-md:[&_h3]:!text-[13px]
+                max-md:[&_p]:!text-xs
+                max-md:[&_li]:!text-xs
+                max-md:[&_code]:!text-[10px]
+              ">
+                <div dangerouslySetInnerHTML={{ __html: post.html }} />
+              </div>
             </div>
+
           </div>
         </section>
       </div>
