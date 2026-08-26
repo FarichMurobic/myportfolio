@@ -1,6 +1,6 @@
 export const certificationsConfig = {
   title: "My Certifications",
-  description: "Formal recognition of technical competencies and proficiency in modern software development and infrastructure management.",
+  description: "Pengakuan formal atas kompetensi teknis serta kemahiran dalam pengembangan perangkat lunak modern dan manajemen infrastruktur.",
   items: [
     {
       id: 1,

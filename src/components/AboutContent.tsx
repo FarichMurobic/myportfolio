@@ -69,6 +69,7 @@ export default function AboutContent() {
                   {/* Timeline Icon */}
                   <div className="absolute top-0 left-0 z-40 flex items-center justify-center -translate-x-1/2 bg-white border rounded-full dark:bg-neutral-950 w-9 h-9 sm:w-14 sm:h-14 border-neutral-300 dark:border-neutral-700">
                     {item.role.includes("Java") ? (
+                      // Icon Kode untuk Java Developer
                       <svg
                         className="w-4 h-4 sm:w-8 sm:h-8 text-neutral-700 dark:text-neutral-300"
                         fill="none"
@@ -82,7 +83,23 @@ export default function AboutContent() {
                           d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
                         />
                       </svg>
+                    ) : item.role.includes("Staff") ? (
+                      // Icon File/Dokumen untuk Staff Administrasi
+                      <svg
+                        className="w-4 h-4 sm:w-8 sm:h-8 text-neutral-700 dark:text-neutral-300"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.5}
+                          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                        />
+                      </svg>
                     ) : item.role.includes("Admin") ? (
+                      // Icon Box untuk Admin Warehouse
                       <svg
                         className="w-4 h-4 sm:w-8 sm:h-8 text-neutral-700 dark:text-neutral-300"
                         fill="none"
@@ -97,6 +114,7 @@ export default function AboutContent() {
                         />
                       </svg>
                     ) : (
+                      // Icon User untuk Sales
                       <svg
                         className="w-4 h-4 sm:w-8 sm:h-8 text-neutral-700 dark:text-neutral-300"
                         fill="none"

@@ -38,7 +38,7 @@ export default function ProjectsContent() {
                     alt={project.title}
                     width={800}
                     height={450}
-                    className="w-full h-auto rounded-lg aspect-[16/9] object-cover"
+                    className="w-full h-auto rounded-lg object-contain bg-neutral-100 dark:bg-neutral-800"
                   />
                 </span>
 
@@ -102,7 +102,7 @@ export default function ProjectsContent() {
                   alt={project.title}
                   width={800}
                   height={450}
-                  className="w-full h-auto rounded-lg aspect-[16/9] object-cover"
+                  className="w-full h-auto rounded-lg object-contain bg-neutral-100 dark:bg-neutral-800"
                 />
 
                 <div className="w-full px-1 mt-5 mb-1">
