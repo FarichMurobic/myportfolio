@@ -70,8 +70,8 @@ function ThemeAwareImage() {
 // Server component version of HomeContent
 export default function HomeContent() {
   return (
-    <div className="flex-1 flex items-center justify-center px-7 lg:px-0 pt-16 md:pt-0 pb-8 md:pb-12" style={{ transform: 'translateY(0px)' }}>
-      <div className="flex flex-col-reverse md:flex-row items-center justify-between w-full max-w-4xl mx-auto px-0 gap-6 md:gap-12">
+    <div className="flex-1 flex items-center justify-center px-4 sm:px-7 lg:px-0 pt-16 md:pt-0 pb-2 md:pb-12" style={{ transform: 'translateY(0px)' }}>
+      <div className="flex flex-col-reverse md:flex-row items-center justify-between w-full max-w-4xl mx-auto px-0 gap-2 md:gap-12">
 
         {/* Text Section - Full width di mobile */}
         <div className="w-full md:w-[50%] text-left max-w-full">

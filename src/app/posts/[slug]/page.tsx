@@ -36,7 +36,7 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
 
             {/* Isi blog */}
             <div className="relative z-30">
-              <div className="prose dark:prose-invert max-w-none prose-sm sm:prose-base lg:prose-lg
+              <div className="prose dark:prose-invert max-w-none prose-sm lg:prose-base
                 max-md:[&_h1]:!text-[15px]
                 max-md:[&_h2]:!text-[14px]
                 max-md:[&_h3]:!text-[13px]

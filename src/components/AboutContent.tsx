@@ -6,14 +6,14 @@ export default function AboutContent() {
     <section className="relative z-20 w-full max-w-4xl mx-auto mt-20 sm:mt-32 mb-12 px-7 sm:px-7">
       {/* Title */}
       <div className="relative z-20 w-full mx-auto lg:mx-0 border border-dashed border-neutral-300 dark:border-neutral-600 md:border-0 rounded-xl p-5 md:p-0">
-        <h2 className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-3xl lg:text-4xl text-center sm:text-left">
+        <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 text-center sm:text-left">
           {aboutConfig.title}
         </h2>
 
         {/* Profile & Skills */}
         <div className="flex flex-col md:flex-row gap-6 sm:gap-8 mt-4 sm:mt-5 lg:mt-6 px-0 max-w-4xl mx-auto">
           <div className="w-full md:w-1/2 flex flex-col">
-            <p className="text-sm leading-6 text-neutral-600 dark:text-neutral-400 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg text-left">
+            <p className="text-xs sm:text-base lg:text-lg leading-6 text-neutral-600 dark:text-neutral-400 sm:leading-7 lg:leading-8 text-left">
               {aboutConfig.description}
             </p>
 
@@ -30,14 +30,20 @@ export default function AboutContent() {
           </div>
 
           {/* Profile Image - Desktop only */}
-          <div className="hidden md:flex w-full md:w-1/2 justify-center md:justify-end">
-            <div className="relative w-[280px] h-[340px] sm:w-[360px] sm:h-[440px]">
+          <div className="hidden md:flex relative w-[280px] h-[340px] sm:w-[360px] sm:h-[440px] group">
+            {/* Back border */}
+            <span className="absolute inset-0 z-10 block w-full h-full border border-dashed rounded-xl border-neutral-300 dark:border-neutral-600 translate-x-1 translate-y-1"></span>
+
+            {/* Front border + image */}
+            <div className="relative z-20 w-full h-full -translate-x-1 -translate-y-1">
+              <div className="absolute inset-0 border border-dashed rounded-xl border-neutral-300 dark:border-neutral-600 pointer-events-none"></div>
+
               <Image
                 src={aboutConfig.image}
                 alt="Profile"
                 fill
                 sizes="(max-width: 768px) 100vw, 360px"
-                className="object-cover rounded-xl"
+                className="object-cover rounded-lg"
                 priority
               />
             </div>
@@ -49,7 +55,7 @@ export default function AboutContent() {
       <div className="flex flex-col md:flex-row mt-12 sm:mt-20">
         {/* Experience */}
         <div className="flex-1 min-w-0">
-          <h2 className="mb-2 text-2xl font-bold dark:text-neutral-200 text-center sm:text-left">
+          <h2 className="mb-2 text-xl sm:text-2xl font-bold dark:text-neutral-200 text-center sm:text-left">
             {aboutConfig.experience.title}
           </h2>
 
@@ -111,15 +117,15 @@ export default function AboutContent() {
                     {item.period}
                   </p>
 
-                  <h3 className="my-1 text-base sm:text-lg font-bold dark:text-neutral-100">
+                  <h3 className="my-1 text-sm sm:text-lg font-bold dark:text-neutral-100">
                     {item.role}
                   </h3>
 
-                  <p className="mb-1 text-xs sm:text-sm font-medium dark:text-neutral-300">
+                  <p className="mb-1 text-[11px] sm:text-sm font-medium dark:text-neutral-300">
                     {item.company}
                   </p>
 
-                  <p className="text-xs sm:text-sm font-light text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                  <p className="text-[11px] sm:text-sm font-light text-neutral-600 dark:text-neutral-400 leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -153,21 +159,22 @@ export default function AboutContent() {
 
         {/* Connect */}
         <div className="w-full md:w-[360px] md:ml-8 mt-4 md:mt-0 min-w-0">
-          <h2 className="mb-2 text-2xl font-bold dark:text-neutral-200 text-center md:text-left">
+          <h2 className="mb-2 text-xl sm:text-2xl font-bold dark:text-neutral-200 text-center md:text-left">
             {aboutConfig.connect.title}
           </h2>
 
           <div className="py-4 sm:py-[30px]">
-            <p className="text-sm leading-6 text-gray-600 dark:text-neutral-400 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg text-center md:text-left">
+            <p className="text-xs sm:text-base lg:text-lg leading-6 text-gray-600 dark:text-neutral-400 sm:leading-7 lg:leading-8 text-center md:text-left">
               {aboutConfig.connect.description}
             </p>
 
             <div className="flex justify-center md:justify-start gap-4 mt-4">
+              {/* GitHub - Hitam/Putih */}
               <a
                 href={aboutConfig.connect.links.github.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#333333] dark:text-white hover:opacity-70 transition"
+                className="text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition"
                 aria-label="GitHub"
               >
                 <svg
@@ -179,11 +186,12 @@ export default function AboutContent() {
                 </svg>
               </a>
 
+              {/* LinkedIn - Hitam/Putih */}
               <a
                 href={aboutConfig.connect.links.linkedin.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#0A66C2] hover:opacity-70 transition"
+                className="text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition"
                 aria-label="LinkedIn"
               >
                 <svg
@@ -195,11 +203,12 @@ export default function AboutContent() {
                 </svg>
               </a>
 
+              {/* Instagram - Hitam/Putih */}
               <a
                 href={aboutConfig.connect.links.instagram.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#E4405F] hover:opacity-70 transition"
+                className="text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition"
                 aria-label="Instagram"
               >
                 <svg
@@ -211,9 +220,10 @@ export default function AboutContent() {
                 </svg>
               </a>
 
+              {/* Email - Hitam/Putih */}
               <a
                 href={aboutConfig.connect.links.email.url}
-                className="text-[#EA4335] hover:opacity-70 transition"
+                className="text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition"
                 aria-label="Email"
               >
                 <svg

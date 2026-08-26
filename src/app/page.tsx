@@ -4,7 +4,7 @@ import HomeContent from '@/components/HomeContent';
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col">
+    <main className="h-screen flex flex-col overflow-hidden">
       <div className="relative flex-grow flex flex-col overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:28px_48px] -z-10"></div>

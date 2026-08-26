@@ -24,7 +24,7 @@ export default function PostsContent() {
   return (
     <section className="relative z-20 w-full max-w-4xl mx-auto mt-20 md:mt-32 mb-12 px-4 sm:px-7">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 sm:mb-8">
-        <h2 className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-3xl lg:text-4xl text-center sm:text-left w-full sm:w-auto">
+        <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 text-center sm:text-left w-full sm:w-auto">
           {postsConfig.title}
         </h2>
       </div>
@@ -51,7 +51,7 @@ export default function PostsContent() {
             onClick={() =>
               setCurrentPage((prev) => Math.max(1, prev - 1))
             }
-            className={`px-3 py-1 text-sm font-medium text-neutral-600 dark:text-neutral-400 ${
+            className={`px-3 py-1 text-xs sm:text-sm font-medium text-neutral-600 dark:text-neutral-400 ${
               currentPage === 1
                 ? "opacity-50 cursor-not-allowed"
                 : ""
@@ -67,7 +67,7 @@ export default function PostsContent() {
               aria-current={
                 index + 1 === currentPage ? "page" : undefined
               }
-              className={`w-8 h-8 flex items-center justify-center rounded-full text-sm font-medium ${
+              className={`w-8 h-8 flex items-center justify-center rounded-full text-xs sm:text-sm font-medium ${
                 index + 1 === currentPage
                   ? "bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900"
                   : "text-neutral-600 dark:text-neutral-400"
@@ -84,7 +84,7 @@ export default function PostsContent() {
                 Math.min(totalPages, prev + 1)
               )
             }
-            className={`px-3 py-1 text-sm font-medium text-neutral-600 dark:text-neutral-400 ${
+            className={`px-3 py-1 text-xs sm:text-sm font-medium text-neutral-600 dark:text-neutral-400 ${
               currentPage === totalPages
                 ? "opacity-50 cursor-not-allowed"
                 : ""

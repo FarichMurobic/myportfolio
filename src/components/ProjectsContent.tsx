@@ -6,11 +6,11 @@ export default function ProjectsContent() {
   return (
     <section className="relative z-20 max-w-4xl mx-auto mt-20 md:mt-32 mb-12 px-7 lg:px-0">
       <div className="relative z-20 w-full mx-auto lg:mx-0">
-        <h2 className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-3xl lg:text-4xl">
+        <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">
           {projectsConfig.title}
         </h2>
 
-        <p className="mt-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg">
+        <p className="mt-3 text-xs sm:text-base lg:text-lg leading-6 text-neutral-600 dark:text-neutral-400 sm:leading-7 lg:leading-8">
           {projectsConfig.description}
         </p>
       </div>
@@ -106,11 +106,11 @@ export default function ProjectsContent() {
                 />
 
                 <div className="w-full px-1 mt-5 mb-1">
-                  <h3 className="text-base font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
+                  <h3 className="text-sm font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
                     {project.title}
                   </h3>
 
-                  <p className="text-sm text-neutral-600 dark:text-neutral-400 block line-clamp-3">
+                  <p className="text-[11px] text-neutral-600 dark:text-neutral-400 block line-clamp-3 leading-relaxed">
                     {project.description}
                   </p>
 
@@ -118,7 +118,7 @@ export default function ProjectsContent() {
                     href={project.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex mt-4 text-[11px] font-medium text-neutral-900 dark:text-neutral-100 underline underline-offset-4"
+                    className="inline-flex mt-4 text-[10px] font-medium text-blue-700 dark:text-blue-400 underline underline-offset-4"
                   >
                     View Project
                   </a>
