@@ -97,26 +97,32 @@ export default function Navbar() {
 
           <div
             id="menu"
-            className={`fixed top-[75px] ease-out duration-300 sm:top-0 w-full left-0 sm:py-0 pt-7 pb-4 dm:mx-0 left-0 z-40 flex-col items-end justify-start ${
+            className={`fixed top-[75px] ease-out duration-300 sm:top-0 w-full left-0 sm:py-0 pt-4 pb-4 left-0 z-40 flex-col items-center justify-start ${
               isMenuOpen ? 'flex' : 'hidden'
             } w-full h-auto text-sm sm:text-base sm:h-auto sm:relative sm:flex-row sm:flex sm:text-sm sm:w-auto sm:pr-0 sm:pt-0`}
           >
-            <div className="absolute inset-0 top-0 right-0 block w-full h-full px-3 sm:hidden">
-              <div className="relative w-full h-full bg-white border border-dashed border-neutral-300 dark:border-neutral-700 backdrop-blur-sm rounded-xl dark:bg-neutral-950"></div>
+            {/* Background - CUMA DI MOBILE */}
+            <div className="absolute inset-0 top-0 right-0 block w-full h-full px-4 sm:hidden">
+              <div className="relative w-full h-full bg-white border border-dashed border-neutral-300 dark:border-neutral-700 backdrop-blur-sm rounded-2xl dark:bg-neutral-950"></div>
             </div>
 
-            {globalConfig.navigation.items.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={closeMenu}
-                className={`relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white ${
-                  isActive(item.href) ? 'text-neutral-900 dark:text-white' : ''
-                }`}
-              >
-                {item.title}
-              </Link>
-            ))}
+            {/* Item menu - CUMA DI MOBILE YANG BERUBAH */}
+            <div className="relative z-10 flex flex-col items-center w-full gap-1 px-4 py-4 sm:flex-row sm:gap-0 sm:px-0 sm:py-0 sm:w-auto">
+              {globalConfig.navigation.items.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={closeMenu}
+                  className={`relative flex items-center justify-center w-full px-4 py-2.5 text-sm font-medium tracking-wide text-center duration-200 ease-out rounded-lg sm:rounded-none sm:px-3 sm:py-0 sm:w-auto hover:bg-neutral-100 dark:hover:bg-neutral-800 sm:hover:bg-transparent sm:dark:hover:bg-transparent ${
+                    isActive(item.href)
+                      ? 'text-neutral-900 dark:text-white bg-neutral-100 dark:bg-neutral-800 sm:bg-transparent sm:dark:bg-transparent'
+                      : 'text-neutral-600 dark:text-neutral-400'
+                  }`}
+                >
+                  {item.title}
+                </Link>
+              ))}
+            </div>
           </div>
 
           <ThemeToggle />
