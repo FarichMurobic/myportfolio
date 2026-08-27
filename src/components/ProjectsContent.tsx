@@ -43,7 +43,7 @@ export default function ProjectsContent() {
                 </span>
 
                 <span className="block w-full px-1 mt-5 mb-1 sm:mt-3">
-                  <span className="flex items-center mb-0 text-base font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
+                  <span className="flex items-center mb-2 text-base font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
                     <span>{project.title}</span>
 
                     <svg
@@ -86,6 +86,20 @@ export default function ProjectsContent() {
                   <span className="text-sm text-neutral-600 dark:text-neutral-400 block line-clamp-3">
                     {project.description}
                   </span>
+
+                  {/* Tech Stack - SAMA KAYAK SKILL DI ABOUT */}
+                  {project.techStack && (
+                    <div className="flex flex-wrap gap-1.5 mt-3">
+                      {project.techStack.map((tech, i) => (
+                        <span
+                          key={i}
+                          className="px-2.5 py-0.5 text-[10px] bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-200 rounded-full"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </span>
               </span>
             </a>
@@ -106,13 +120,27 @@ export default function ProjectsContent() {
                 />
 
                 <div className="w-full px-1 mt-5 mb-1">
-                  <h3 className="text-sm font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
+                  <h3 className="text-sm font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 mb-2">
                     {project.title}
                   </h3>
 
                   <p className="text-[11px] text-neutral-600 dark:text-neutral-400 block line-clamp-3 leading-relaxed">
                     {project.description}
                   </p>
+
+                  {/* Tech Stack - SAMA KAYAK SKILL DI ABOUT */}
+                  {project.techStack && (
+                    <div className="flex flex-wrap gap-1 mt-2">
+                      {project.techStack.map((tech, i) => (
+                        <span
+                          key={i}
+                          className="px-2 py-0.5 text-[9px] bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-200 rounded-full"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  )}
 
                   <a
                     href={project.href}
