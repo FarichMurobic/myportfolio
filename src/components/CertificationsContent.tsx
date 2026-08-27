@@ -45,7 +45,7 @@ export default function CertificationsContent() {
                 </span>
 
                 <span className="block w-full px-1 mt-5 mb-1 sm:mt-3">
-                  <span className="flex items-center mb-0 text-base font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
+                  <span className="flex items-center mb-2 text-base font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
                     <span>{certification.title}</span>
 
                     <svg
@@ -88,6 +88,13 @@ export default function CertificationsContent() {
                   <span className="text-sm text-neutral-600 dark:text-neutral-400 block mt-1 line-clamp-2">
                     {certification.description}
                   </span>
+
+                  {/* ISSUER - SAMA KAYAK SKILL DI ABOUT */}
+                  {certification.issuer && (
+                    <span className="inline-block mt-2 px-2.5 py-0.5 text-[10px] bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-200 rounded-full">
+                      {certification.issuer}
+                    </span>
+                  )}
                 </span>
               </span>
             </a>
@@ -110,7 +117,7 @@ export default function CertificationsContent() {
                 </div>
 
                 <div className="w-full px-1 mt-5 mb-1">
-                  <h3 className="text-sm font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
+                  <h3 className="text-sm font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 mb-2">
                     {certification.title}
                   </h3>
 
@@ -118,15 +125,22 @@ export default function CertificationsContent() {
                     {certification.description}
                   </p>
 
-                  <a
-                    href={certification.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex mt-4 text-[10px] font-medium text-blue-700 dark:text-blue-400 underline underline-offset-4"
-                  >
-                    View Certification
-                  </a>
-                </div>
+                    {/* ISSUER - DI ATAS VIEW CERTIFICATION */}
+                    {certification.issuer && (
+                      <span className="block w-fit mt-2 px-2 py-0.5 text-[9px] bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-200 rounded-full">
+                        {certification.issuer}
+                      </span>
+                    )}
+
+                    <a
+                      href={certification.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex mt-3 text-[10px] font-medium text-blue-700 dark:text-blue-400 underline underline-offset-4"
+                    >
+                      View Certificate
+                    </a>
+                  </div>
               </div>
             </div>
           </div>
