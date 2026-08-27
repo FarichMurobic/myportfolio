@@ -10,100 +10,166 @@
         color: black;
         }
 
-        .line {
+        .wave {
         fill: none;
         stroke: currentColor;
-        stroke-width: 1.2;
-        opacity: 0.09;
+        stroke-width: 1.15;
+        opacity: 0.085;
         }
 
-        .fine-line {
+        .wave-fine {
         fill: none;
         stroke: currentColor;
-        stroke-width: 0.8;
-        opacity: 0.055;
+        stroke-width: 0.75;
+        opacity: 0.045;
         }
 
-        .ring {
+        .wave-strong {
         fill: none;
         stroke: currentColor;
-        stroke-width: 1;
-        opacity: 0.07;
-        }
-
-        .node {
-        fill: currentColor;
-        opacity: 0.16;
+        stroke-width: 1.5;
+        opacity: 0.010;
         }
 
         .particle {
         fill: currentColor;
-        opacity: 0.10;
+        opacity: 0.105;
         }
 
-        .core {
+        .particle-soft {
         fill: currentColor;
-        opacity: 0.13;
+        opacity: 0.038;
         }
 
-        .network {
-        transform-origin: 400px 400px;
-        animation: networkFloat 18s ease-in-out infinite;
+        .particle-mid {
+        fill: currentColor;
+        opacity: 0.068;
         }
 
-        .orbit {
-        transform-origin: 400px 400px;
-        animation: rotate 45s linear infinite;
+        .particle-bright {
+        fill: currentColor;
+        opacity: 0.145;
         }
 
-        .orbit-reverse {
-        transform-origin: 400px 400px;
-        animation: rotateReverse 65s linear infinite;
+        .vertical {
+        stroke: currentColor;
+        stroke-width: 0.4;
+        opacity: 0.018;
         }
 
-        .pulse {
-        animation: pulse 6s ease-in-out infinite;
+        /* =========================================
+        SUBTLE PREMIUM MOTION
+        ========================================= */
+
+        .wave-main {
+        transform-origin: center;
+        animation: waveDrift 14s ease-in-out infinite;
         }
 
-        @keyframes networkFloat {
-        0%,
-        100% {
-        transform: translate(0, 0) scale(1);
+        .wave-secondary {
+        transform-origin: center;
+        animation: waveDriftReverse 18s ease-in-out infinite;
         }
 
+        .wave-crossing {
+        transform-origin: center;
+        animation: crossingDrift 16s ease-in-out infinite;
+        }
+
+        .wave-horizon {
+        animation: horizonDrift 20s ease-in-out infinite;
+        }
+
+        .particle-field {
+        animation: fieldDrift 22s ease-in-out infinite;
+        }
+
+        .particle-field-secondary {
+        animation: fieldDriftReverse 28s ease-in-out infinite;
+        }
+
+        .data-trails {
+        animation: trailPulse 9s ease-in-out infinite;
+        }
+
+        @keyframes waveDrift {
+        0%, 100% {
+        transform: translate3d(-3px, 0px, 0);
+        }
         50% {
-        transform: translate(3px, -5px) scale(1.015);
+        transform: translate3d(3px, 3px, 0);
         }
         }
 
-        @keyframes rotate {
-        from {
-        transform: rotate(0deg);
+        @keyframes waveDriftReverse {
+        0%, 100% {
+        transform: translate3d(2px, 1px, 0);
         }
-
-        to {
-        transform: rotate(360deg);
-        }
-        }
-
-        @keyframes rotateReverse {
-        from {
-        transform: rotate(360deg);
-        }
-
-        to {
-        transform: rotate(0deg);
-        }
-        }
-
-        @keyframes pulse {
-        0%,
-        100% {
-        opacity: 0.08;
-        }
-
         50% {
-        opacity: 0.18;
+        transform: translate3d(-3px, -2px, 0);
+        }
+        }
+
+        @keyframes crossingDrift {
+        0%, 100% {
+        transform: translate3d(-2px, 1px, 0);
+        }
+        50% {
+        transform: translate3d(3px, -2px, 0);
+        }
+        }
+
+        @keyframes horizonDrift {
+        0%, 100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 0.72;
+        }
+        50% {
+        transform: translate3d(2px, -2px, 0);
+        opacity: 1;
+        }
+        }
+
+        @keyframes fieldDrift {
+        0%, 100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 0.9;
+        }
+        50% {
+        transform: translate3d(3px, -4px, 0);
+        opacity: 1;
+        }
+        }
+
+        @keyframes fieldDriftReverse {
+        0%, 100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 0.8;
+        }
+        50% {
+        transform: translate3d(-3px, 3px, 0);
+        opacity: 1;
+        }
+        }
+
+        @keyframes trailPulse {
+        0%, 100% {
+        opacity: 0.72;
+        }
+        50% {
+        opacity: 1;
+        }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+        .wave-main,
+        .wave-secondary,
+        .wave-crossing,
+        .wave-horizon,
+        .particle-field,
+        .particle-field-secondary,
+        .data-trails {
+        animation: none;
         }
         }
 
@@ -120,190 +186,465 @@
         }
     </style>
 
-    <!-- Main network -->
-    <g class="network">
 
-        <!-- Primary connections -->
-        <g class="line">
-            <path d="M175 260 L285 205 L400 285 L515 205 L625 260" />
-            <path d="M145 420 L260 350 L400 400 L540 350 L655 420" />
-            <path d="M175 540 L285 595 L400 515 L515 595 L625 540" />
+    <!-- =========================================
+         LARGE ORGANIC FLOWING WAVE
+         ========================================= -->
 
-            <path d="M285 205 L260 350 L285 595" />
-            <path d="M515 205 L540 350 L515 595" />
+    <g class="wave-main">
 
-            <path d="M400 285 L400 400 L400 515" />
-        </g>
-
-        <!-- Secondary connections -->
-        <g class="fine-line">
-            <path d="M175 260 L145 420 L175 540" />
-            <path d="M625 260 L655 420 L625 540" />
-
-            <path d="M285 205 L400 400 L515 205" />
-            <path d="M285 595 L400 400 L515 595" />
-        </g>
-
-        <!-- Main nodes -->
-        <g class="pulse">
-            <circle class="node" cx="175" cy="260" r="4" />
-            <circle class="node" cx="625" cy="260" r="4" />
-
-            <circle class="node" cx="145" cy="420" r="3" />
-            <circle class="node" cx="655" cy="420" r="3" />
-
-            <circle class="node" cx="175" cy="540" r="4" />
-            <circle class="node" cx="625" cy="540" r="4" />
-
-            <circle class="node" cx="285" cy="205" r="3.5" />
-            <circle class="node" cx="515" cy="205" r="3.5" />
-
-            <circle class="node" cx="285" cy="595" r="3.5" />
-            <circle class="node" cx="515" cy="595" r="3.5" />
-
-            <circle class="node" cx="260" cy="350" r="3" />
-            <circle class="node" cx="540" cy="350" r="3" />
-        </g>
-
-    </g>
-
-    <!-- Central system -->
-    <g>
-
-        <circle
-                class="ring"
-                cx="400"
-                cy="400"
-                r="72"
+        <path
+                class="wave"
+                d="
+        M-55 424
+        C42 374 145 350 250 404
+        C342 451 414 494 505 431
+        C598 367 704 349 855 407
+      "
         />
 
-        <circle
-                class="ring"
-                cx="400"
-                cy="400"
-                r="105"
-                stroke-dasharray="2 12"
+        <path
+                class="wave"
+                d="
+        M-55 439
+        C45 388 148 364 253 419
+        C344 467 417 509 508 446
+        C601 382 707 364 855 422
+      "
         />
 
-        <circle
-                class="ring"
-                cx="400"
-                cy="400"
-                r="145"
-                stroke-dasharray="1 18"
+        <path
+                class="wave"
+                d="
+        M-55 454
+        C48 402 151 378 256 434
+        C347 483 420 524 511 461
+        C604 397 710 379 855 437
+      "
         />
 
-        <circle
-                class="core pulse"
-                cx="400"
-                cy="400"
-                r="8"
+        <path
+                class="wave-fine"
+                d="
+        M-55 469
+        C51 417 154 393 259 449
+        C350 499 423 539 514 476
+        C607 412 713 394 855 452
+      "
         />
 
-        <circle
-                class="ring"
-                cx="400"
-                cy="400"
-                r="18"
+        <path
+                class="wave-fine"
+                d="
+        M-55 482
+        C54 431 157 409 262 462
+        C353 512 426 552 518 489
+        C611 425 716 408 855 465
+      "
         />
 
     </g>
 
-    <!-- Rotating technical orbit -->
-    <g class="orbit">
 
-        <ellipse
-                class="ring"
-                cx="400"
-                cy="400"
-                rx="225"
-                ry="105"
+    <!-- =========================================
+         UPPER FLOWING LAYERS
+         ========================================= -->
+
+    <g class="wave-secondary">
+
+        <path
+                class="wave-fine"
+                d="
+        M-45 347
+        C54 304 158 282 273 339
+        C362 384 432 421 518 360
+        C615 292 711 287 845 337
+      "
         />
 
-        <ellipse
-                class="fine-line"
-                cx="400"
-                cy="400"
-                rx="275"
-                ry="145"
+        <path
+                class="wave-fine"
+                d="
+        M-45 329
+        C57 286 161 264 276 322
+        C365 367 435 404 521 343
+        C618 275 714 270 845 320
+      "
         />
 
-        <circle
-                class="particle"
-                cx="625"
-                cy="400"
-                r="4"
+        <path
+                class="wave-fine"
+                d="
+        M-45 312
+        C60 269 164 247 279 306
+        C368 351 438 388 524 327
+        C621 259 717 254 845 304
+      "
         />
 
-        <circle
-                class="particle"
-                cx="175"
-                cy="400"
-                r="3"
-        />
-
-    </g>
-
-    <!-- Reverse orbit -->
-    <g class="orbit-reverse">
-
-        <ellipse
-                class="ring"
-                cx="400"
-                cy="400"
-                rx="120"
-                ry="255"
-        />
-
-        <ellipse
-                class="fine-line"
-                cx="400"
-                cy="400"
-                rx="155"
-                ry="295"
-        />
-
-        <circle
-                class="particle"
-                cx="400"
-                cy="105"
-                r="3"
-        />
-
-        <circle
-                class="particle"
-                cx="400"
-                cy="695"
-                r="4"
+        <path
+                class="wave-fine"
+                d="
+        M-35 365
+        C69 322 166 304 278 359
+        C367 403 437 439 523 378
+        C619 310 715 304 840 353
+      "
         />
 
     </g>
 
-    <!-- Floating particles -->
-    <g class="particle">
 
-        <circle cx="105" cy="190" r="2" />
-        <circle cx="695" cy="190" r="2.5" />
+    <!-- =========================================
+         LOWER FLOWING LAYERS
+         ========================================= -->
 
-        <circle cx="90" cy="610" r="2.5" />
-        <circle cx="710" cy="610" r="2" />
+    <g class="wave-secondary">
 
-        <circle cx="225" cy="115" r="2" />
-        <circle cx="575" cy="115" r="2.5" />
+        <path
+                class="wave-fine"
+                d="
+        M-45 494
+        C58 447 162 427 275 482
+        C366 527 437 562 521 502
+        C619 435 717 428 845 478
+      "
+        />
 
-        <circle cx="225" cy="685" r="2.5" />
-        <circle cx="575" cy="685" r="2" />
+        <path
+                class="wave-fine"
+                d="
+        M-45 510
+        C61 463 165 443 278 498
+        C369 543 440 578 524 518
+        C622 451 720 444 845 494
+      "
+        />
+
+        <path
+                class="wave-fine"
+                d="
+        M-45 526
+        C64 479 168 459 281 514
+        C372 559 443 594 527 534
+        C625 467 723 460 845 510
+      "
+        />
+
+        <path
+                class="wave-fine"
+                d="
+        M-35 543
+        C67 496 172 476 284 530
+        C375 575 446 610 530 550
+        C628 483 726 476 840 526
+      "
+        />
 
     </g>
 
-    <!-- Subtle radial guides -->
-    <g class="fine-line">
 
-        <line x1="400" y1="70" x2="400" y2="175" />
-        <line x1="400" y1="625" x2="400" y2="730" />
+    <!-- =========================================
+         SECONDARY CROSSING WAVE
+         ========================================= -->
 
-        <line x1="70" y1="400" x2="175" y2="400" />
-        <line x1="625" y1="400" x2="730" y2="400" />
+    <g class="wave-crossing">
+
+        <path
+                class="wave-strong"
+                d="
+        M-35 401
+        C58 451 155 495 264 444
+        C355 401 425 329 510 365
+        C609 406 703 480 845 428
+      "
+        />
+
+        <path
+                class="wave"
+                d="
+        M-35 414
+        C61 463 158 507 267 456
+        C358 413 428 341 513 377
+        C612 418 706 493 845 440
+      "
+        />
+
+        <path
+                class="wave-fine"
+                d="
+        M-35 427
+        C64 475 161 519 270 468
+        C361 426 431 353 516 389
+        C615 430 709 505 845 452
+      "
+        />
+
+    </g>
+
+
+    <!-- =========================================
+         DIGITAL HORIZON / LOWER DATA FIELD
+         ========================================= -->
+
+    <g class="wave-horizon wave-fine">
+
+        <path
+                d="
+        M5 554
+        C108 537 200 535 286 565
+        C368 594 431 602 511 576
+        C598 548 681 536 795 556
+      "
+        />
+
+        <path
+                d="
+        M18 570
+        C118 551 207 549 292 579
+        C374 608 438 616 518 590
+        C605 562 686 550 783 571
+      "
+        />
+
+        <path
+                d="
+        M35 587
+        C129 567 217 566 299 595
+        C380 624 445 631 525 605
+        C610 578 685 567 766 588
+      "
+        />
+
+        <path
+                d="
+        M58 604
+        C147 583 226 583 307 611
+        C388 638 451 646 532 620
+        C613 595 681 585 742 603
+      "
+        />
+
+        <path
+                d="
+        M92 620
+        C170 603 238 602 316 627
+        C394 651 456 657 538 634
+        C610 613 667 604 714 616
+      "
+        />
+
+    </g>
+
+
+    <!-- =========================================
+         FRAGMENTED VERTICAL DATA TRAILS
+         ========================================= -->
+
+    <g class="data-trails vertical">
+
+        <line x1="108" y1="408" x2="108" y2="374" />
+        <line x1="108" y1="361" x2="108" y2="337" />
+
+        <line x1="151" y1="398" x2="151" y2="366" />
+        <line x1="151" y1="350" x2="151" y2="319" />
+
+        <line x1="198" y1="413" x2="198" y2="383" />
+        <line x1="198" y1="368" x2="198" y2="334" />
+
+        <line x1="244" y1="429" x2="244" y2="395" />
+        <line x1="244" y1="377" x2="244" y2="342" />
+
+        <line x1="306" y1="438" x2="306" y2="402" />
+        <line x1="306" y1="386" x2="306" y2="349" />
+        <line x1="306" y1="336" x2="306" y2="306" />
+
+        <line x1="349" y1="453" x2="349" y2="418" />
+        <line x1="349" y1="399" x2="349" y2="365" />
+
+        <line x1="401" y1="463" x2="401" y2="430" />
+        <line x1="401" y1="411" x2="401" y2="378" />
+
+        <line x1="456" y1="453" x2="456" y2="420" />
+        <line x1="456" y1="401" x2="456" y2="367" />
+
+        <line x1="499" y1="438" x2="499" y2="402" />
+        <line x1="499" y1="384" x2="499" y2="348" />
+        <line x1="499" y1="335" x2="499" y2="307" />
+
+        <line x1="561" y1="423" x2="561" y2="394" />
+        <line x1="561" y1="377" x2="561" y2="345" />
+
+        <line x1="613" y1="408" x2="613" y2="381" />
+        <line x1="613" y1="365" x2="613" y2="334" />
+
+        <line x1="667" y1="398" x2="667" y2="368" />
+        <line x1="667" y1="351" x2="667" y2="319" />
+
+        <line x1="713" y1="403" x2="713" y2="376" />
+        <line x1="713" y1="362" x2="713" y2="342" />
+
+    </g>
+
+
+    <!-- =========================================
+         MAIN PARTICLE FIELD
+         ========================================= -->
+
+    <g class="particle-field">
+
+        <circle class="particle" cx="108" cy="408" r="2.8" />
+        <circle class="particle-soft" cx="113" cy="390" r="1.1" />
+        <circle class="particle-mid" cx="103" cy="371" r="1.6" />
+        <circle class="particle-soft" cx="110" cy="348" r="0.8" />
+        <circle class="particle-soft" cx="96" cy="333" r="0.6" />
+
+        <circle class="particle-bright" cx="151" cy="398" r="3.2" />
+        <circle class="particle-soft" cx="147" cy="378" r="1.0" />
+        <circle class="particle-mid" cx="154" cy="352" r="1.5" />
+        <circle class="particle-soft" cx="143" cy="328" r="0.8" />
+        <circle class="particle-soft" cx="158" cy="310" r="0.55" />
+
+        <circle class="particle" cx="198" cy="413" r="2.6" />
+        <circle class="particle-soft" cx="203" cy="392" r="0.9" />
+        <circle class="particle-mid" cx="194" cy="365" r="1.4" />
+        <circle class="particle-soft" cx="201" cy="342" r="0.75" />
+
+        <circle class="particle-bright" cx="244" cy="429" r="3.7" />
+        <circle class="particle-mid" cx="238" cy="405" r="1.8" />
+        <circle class="particle-soft" cx="248" cy="380" r="1.0" />
+        <circle class="particle-mid" cx="241" cy="354" r="1.3" />
+        <circle class="particle-soft" cx="251" cy="331" r="0.7" />
+        <circle class="particle-soft" cx="234" cy="313" r="0.55" />
+
+        <circle class="particle-bright" cx="306" cy="438" r="4.1" />
+        <circle class="particle" cx="302" cy="410" r="2.2" />
+        <circle class="particle-soft" cx="309" cy="383" r="1.1" />
+        <circle class="particle-mid" cx="304" cy="351" r="1.5" />
+        <circle class="particle-soft" cx="312" cy="323" r="0.8" />
+        <circle class="particle-soft" cx="298" cy="296" r="0.55" />
+
+        <circle class="particle" cx="349" cy="453" r="3.1" />
+        <circle class="particle-mid" cx="345" cy="424" r="1.6" />
+        <circle class="particle-soft" cx="352" cy="396" r="1.0" />
+        <circle class="particle-soft" cx="344" cy="370" r="0.8" />
+
+        <circle class="particle-bright" cx="401" cy="463" r="3.8" />
+        <circle class="particle" cx="397" cy="432" r="2.1" />
+        <circle class="particle-soft" cx="405" cy="402" r="1.0" />
+        <circle class="particle-mid" cx="399" cy="372" r="1.4" />
+        <circle class="particle-soft" cx="407" cy="345" r="0.75" />
+        <circle class="particle-soft" cx="393" cy="320" r="0.5" />
+
+        <circle class="particle" cx="456" cy="453" r="3.1" />
+        <circle class="particle-mid" cx="452" cy="422" r="1.6" />
+        <circle class="particle-soft" cx="459" cy="393" r="1.0" />
+        <circle class="particle-soft" cx="453" cy="366" r="0.8" />
+
+        <circle class="particle-bright" cx="499" cy="438" r="4.1" />
+        <circle class="particle" cx="495" cy="410" r="2.2" />
+        <circle class="particle-soft" cx="502" cy="381" r="1.1" />
+        <circle class="particle-mid" cx="497" cy="351" r="1.4" />
+        <circle class="particle-soft" cx="505" cy="323" r="0.75" />
+        <circle class="particle-soft" cx="492" cy="297" r="0.55" />
+
+        <circle class="particle-bright" cx="561" cy="423" r="3.7" />
+        <circle class="particle-mid" cx="557" cy="397" r="1.8" />
+        <circle class="particle-soft" cx="564" cy="370" r="1.0" />
+        <circle class="particle-soft" cx="559" cy="345" r="0.75" />
+
+        <circle class="particle" cx="613" cy="408" r="2.7" />
+        <circle class="particle-soft" cx="609" cy="386" r="0.9" />
+        <circle class="particle-mid" cx="616" cy="361" r="1.3" />
+        <circle class="particle-soft" cx="611" cy="338" r="0.75" />
+
+        <circle class="particle-bright" cx="667" cy="398" r="3.2" />
+        <circle class="particle-soft" cx="671" cy="376" r="1.0" />
+        <circle class="particle-mid" cx="664" cy="351" r="1.4" />
+        <circle class="particle-soft" cx="670" cy="327" r="0.75" />
+        <circle class="particle-soft" cx="662" cy="306" r="0.5" />
+
+        <circle class="particle" cx="713" cy="403" r="2.6" />
+        <circle class="particle-mid" cx="709" cy="382" r="1.3" />
+        <circle class="particle-soft" cx="716" cy="359" r="0.8" />
+        <circle class="particle-soft" cx="707" cy="340" r="0.55" />
+
+    </g>
+
+
+    <!-- =========================================
+         ORGANIC FLOATING PARTICLES
+         ========================================= -->
+
+    <g class="particle-field-secondary">
+
+        <circle class="particle-soft" cx="88" cy="322" r="1.0" />
+        <circle class="particle-mid" cx="126" cy="287" r="1.4" />
+        <circle class="particle-soft" cx="171" cy="247" r="0.85" />
+
+        <circle class="particle-soft" cx="214" cy="274" r="1.0" />
+        <circle class="particle" cx="270" cy="237" r="1.5" />
+        <circle class="particle-soft" cx="293" cy="266" r="0.7" />
+
+        <circle class="particle-soft" cx="324" cy="193" r="0.95" />
+        <circle class="particle-mid" cx="359" cy="221" r="1.45" />
+        <circle class="particle-soft" cx="382" cy="178" r="0.65" />
+
+        <circle class="particle-soft" cx="414" cy="229" r="0.75" />
+        <circle class="particle-soft" cx="441" cy="204" r="0.95" />
+        <circle class="particle" cx="477" cy="236" r="1.45" />
+
+        <circle class="particle-soft" cx="530" cy="192" r="0.95" />
+        <circle class="particle-mid" cx="579" cy="246" r="1.35" />
+        <circle class="particle-soft" cx="606" cy="219" r="0.65" />
+
+        <circle class="particle-soft" cx="631" cy="276" r="0.95" />
+        <circle class="particle" cx="686" cy="237" r="1.5" />
+        <circle class="particle-soft" cx="719" cy="264" r="0.7" />
+
+        <circle class="particle-soft" cx="736" cy="287" r="0.95" />
+
+    </g>
+
+
+    <!-- =========================================
+         LOWER DATA FIELD PARTICLES
+         ========================================= -->
+
+    <g class="particle-field-secondary">
+
+        <circle class="particle-soft" cx="118" cy="511" r="0.8" />
+        <circle class="particle-mid" cx="151" cy="526" r="1.2" />
+        <circle class="particle-soft" cx="179" cy="538" r="0.65" />
+
+        <circle class="particle-soft" cx="211" cy="547" r="0.9" />
+        <circle class="particle-mid" cx="252" cy="562" r="1.15" />
+        <circle class="particle-soft" cx="278" cy="574" r="0.7" />
+        <circle class="particle-soft" cx="291" cy="593" r="0.5" />
+
+        <circle class="particle-soft" cx="305" cy="582" r="0.9" />
+        <circle class="particle-mid" cx="347" cy="597" r="1.2" />
+        <circle class="particle-soft" cx="379" cy="608" r="0.65" />
+        <circle class="particle-soft" cx="329" cy="618" r="0.7" />
+
+        <circle class="particle-soft" cx="426" cy="608" r="0.7" />
+        <circle class="particle-mid" cx="453" cy="600" r="1.15" />
+        <circle class="particle-soft" cx="493" cy="584" r="0.8" />
+        <circle class="particle-soft" cx="520" cy="614" r="0.65" />
+
+        <circle class="particle-mid" cx="542" cy="568" r="1.15" />
+        <circle class="particle-soft" cx="574" cy="555" r="0.7" />
+        <circle class="particle-soft" cx="594" cy="543" r="0.9" />
+
+        <circle class="particle-soft" cx="637" cy="532" r="0.7" />
+        <circle class="particle-mid" cx="675" cy="517" r="1.15" />
+        <circle class="particle-soft" cx="703" cy="506" r="0.65" />
+
+        <circle class="particle-soft" cx="234" cy="595" r="0.65" />
+        <circle class="particle-soft" cx="267" cy="610" r="0.5" />
+        <circle class="particle-soft" cx="407" cy="625" r="0.5" />
+        <circle class="particle-soft" cx="566" cy="603" r="0.55" />
+        <circle class="particle-soft" cx="624" cy="575" r="0.7" />
 
     </g>
 

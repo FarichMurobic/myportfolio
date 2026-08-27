@@ -1,6 +1,6 @@
 export const aboutConfig = {
   title: "About Me",
-  description: "Berawal dari Sales Operations, kemudian Staff Administrasi, hingga Warehouse Admin—perjalanan karir saya membentuk pola pikir sistematis dalam mengelola dokumen, inventory, dan workflow. Pengalaman operasional ini kini menjadi fondasi saya sebagai Backend Developer (Java & Spring Boot). Saya fokus membangun backend architecture yang scalable, terstruktur, serta mengutamakan data integrity, maintainability, dan performa tinggi.",
+  description: "Berawal dari Sales Operations, Staff Administrasi, hingga Warehouse Admin—pengalaman operasional membentuk pola pikir sistematis saya. Kini sebagai Backend Developer (Java & Spring Boot), saya fokus membangun arsitektur backend yang scalable, terstruktur, serta mengutamakan data integrity, maintainability, dan performa tinggi.",
   image: "/assets/images/about/Me.png",
   skills: [
     "Java",
@@ -22,19 +22,22 @@ export const aboutConfig = {
         period: "March 2024 - September 2024",
         role: "Admin Warehouse",
         company: "PT ID Express Logistik Indonesia ",
-        description: "Mengembangkan kemampuan berpikir sistematis dan terorganisir melalui pengelolaan inventory serta alur kerja data (data workflows). Pengalaman ini menjadi fondasi kuat dalam merancang arsitektur backend yang scalable dan menjaga sistem manajemen state (state management) yang terstruktur dengan baik."
+        description: "Mengembangkan kemampuan berpikir sistematis dan terorganisir melalui pengelolaan inventory serta alur kerja data (data workflows). Pengalaman ini menjadi fondasi kuat dalam merancang arsitektur backend yang scalable dan menjaga sistem manajemen state (state management) yang terstruktur dengan baik.",
+        certificateUrl: "/assets/paklaring/Paklaring Workmate.pdf"
       },
       {
         period: "January 2020 - December 2023",
         role: "Staff Administrasi",
         company: "PT Shabir Indonesia",
-        description: "Mengelola seluruh administrasi dokumen dan arsip perusahaan dengan sistem yang terorganisir. Bertanggung jawab dalam menyusun laporan periodik, mengatur jadwal serta agenda kantor, dan menjadi support system utama dalam operasional harian agar semua workflow berjalan lancar dan efisien."
+        description: "Mengelola seluruh administrasi dokumen dan arsip perusahaan dengan sistem yang terorganisir. Bertanggung jawab dalam menyusun laporan periodik, mengatur jadwal serta agenda kantor, dan menjadi support system utama dalam operasional harian agar semua workflow berjalan lancar dan efisien.",
+        certificateUrl: "/assets/paklaring/Paklaring PT Shabir Indonesia.pdf"
       },
       {
         period: "November 2017 - December 2019",
         role: "Sales Counter Officer",
         company: "Agen JNE Menara BPJamsostek",
-        description: "Dengan pengalaman langsung dalam menganalisis kebutuhan pengguna (user requirements) dan menerjemahkannya ke dalam logika sistem yang berorientasi pada solusi, saya mampu menjembatani kebutuhan bisnis dengan implementasi teknis secara efektif. Hal ini memastikan setiap solusi yang dihasilkan tidak hanya fungsional tetapi juga selaras dengan ekspektasi pengguna."
+        description: "Dengan pengalaman langsung dalam menganalisis kebutuhan pengguna (user requirements) dan menerjemahkannya ke dalam logika sistem yang berorientasi pada solusi, saya mampu menjembatani kebutuhan bisnis dengan implementasi teknis secara efektif. Hal ini memastikan setiap solusi yang dihasilkan tidak hanya fungsional tetapi juga selaras dengan ekspektasi pengguna.",
+        certificateUrl: "/assets/paklaring/Paklaring JNE.pdf"
       }
     ]
   },

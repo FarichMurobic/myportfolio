@@ -146,6 +146,19 @@ export default function AboutContent() {
                   <p className="text-[11px] sm:text-sm font-light text-neutral-600 dark:text-neutral-400 leading-relaxed">
                     {item.description}
                   </p>
+
+                  {/* Tombol View Certificate - HANYA KALAU ADA certificateUrl */}
+                  {item.certificateUrl && (
+                    <a
+                      href={item.certificateUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex mt-2 text-[10px] font-medium text-blue-700 dark:text-blue-400 underline underline-offset-4 hover:opacity-80 transition"
+                    >
+                      View Certificate Employment
+                    </a>
+                  )}
+
                 </div>
               </div>
             ))}

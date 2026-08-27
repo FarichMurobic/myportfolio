@@ -1,6 +1,6 @@
 export const certificationsConfig = {
   title: "My Certifications",
-  description: "Pengakuan formal atas kompetensi teknis serta kemahiran dalam pengembangan perangkat lunak modern dan manajemen infrastruktur.",
+  description: "Merupakan bentuk pengakuan formal terhadap kompetensi teknis dan keahlian profesional dalam pengembangan perangkat lunak kontemporer—meliputi analisis kebutuhan, perancangan solusi, implementasi sistem, hingga pengelolaan infrastruktur TI yang aman dan terukur.",
   items: [
     {
       id: 1,
