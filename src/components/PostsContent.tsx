@@ -1,101 +1,62 @@
-"use client";
-
-import { useState } from "react";
-import { postsConfig } from "@/config/posts";
-import PostsSearch from "./PostsSearch";
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+import readingTime from 'reading-time';
 import PostCard from "@/components/PostCard";
 
-const POSTS_PER_PAGE = 5;
+const postsDirectory = path.join(process.cwd(), 'src/posts');
 
 export default function PostsContent() {
-  const totalPages = Math.ceil(
-    postsConfig.posts.length / POSTS_PER_PAGE
-  );
+  const files = fs.readdirSync(postsDirectory);
+  const allPosts = files.map((file) => {
+    const filePath = path.join(postsDirectory, file);
+    const fileContent = fs.readFileSync(filePath, 'utf8');
+    const { data, content } = matter(fileContent);
 
-  const [currentPage, setCurrentPage] = useState(1);
+    // Hitung read time
+    const stats = readingTime(content);
+    const readTime = Math.ceil(stats.minutes);
 
-  const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
+    // Ambil tanggal modifikasi file (otomatis)
+    const fileStats = fs.statSync(filePath);
+    const updatedDate = fileStats.mtime.toISOString().split('T')[0]; // Format YYYY-MM-DD
 
-  const currentPosts = postsConfig.posts.slice(
-    startIndex,
-    startIndex + POSTS_PER_PAGE
-  );
+    return {
+      slug: file.replace('.md', ''),
+      title: data.title || 'Untitled',
+      description: data.description || '',
+      date: data.date || '',
+      updated: updatedDate, // <-- OTOMATIS dari file
+      image: data.image || '/assets/images/posts/default.jpg',
+      readTime: readTime,
+      author: data.author || 'Farich Murobic',
+      tags: data.tags || [],
+    };
+  });
 
   return (
     <section className="relative z-20 w-full max-w-4xl mx-auto mt-20 md:mt-32 mb-12 px-4 sm:px-7">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 sm:mb-8">
         <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 text-center sm:text-left w-full sm:w-auto">
-          {postsConfig.title}
+          My Posts
         </h2>
       </div>
 
       <div className="flex flex-col items-stretch w-full gap-5">
-        {currentPosts.map((post) => (
+        {allPosts.map((post) => (
           <PostCard
             key={post.slug}
             title={post.title}
             description={post.description}
             date={post.date}
-            href={`/${post.slug}`}
+            href={`/posts/${post.slug}`}
             pattern="dots"
             imageUrl={post.image}
-            readingTime={parseInt(post.readTime)}
+            readingTime={post.readTime}
+            updated={post.updated}
           />
         ))}
       </div>
-
-      {totalPages > 1 && (
-        <div className="flex flex-wrap justify-center items-center gap-2 mt-8">
-          <button
-            disabled={currentPage === 1}
-            onClick={() =>
-              setCurrentPage((prev) => Math.max(1, prev - 1))
-            }
-            className={`px-3 py-1 text-xs sm:text-sm font-medium text-neutral-600 dark:text-neutral-400 ${
-              currentPage === 1
-                ? "opacity-50 cursor-not-allowed"
-                : ""
-            }`}
-          >
-            {postsConfig.pagination.previous}
-          </button>
-
-          {[...Array(totalPages)].map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentPage(index + 1)}
-              aria-current={
-                index + 1 === currentPage ? "page" : undefined
-              }
-              className={`w-8 h-8 flex items-center justify-center rounded-full text-xs sm:text-sm font-medium ${
-                index + 1 === currentPage
-                  ? "bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900"
-                  : "text-neutral-600 dark:text-neutral-400"
-              }`}
-            >
-              {index + 1}
-            </button>
-          ))}
-
-          <button
-            disabled={currentPage === totalPages}
-            onClick={() =>
-              setCurrentPage((prev) =>
-                Math.min(totalPages, prev + 1)
-              )
-            }
-            className={`px-3 py-1 text-xs sm:text-sm font-medium text-neutral-600 dark:text-neutral-400 ${
-              currentPage === totalPages
-                ? "opacity-50 cursor-not-allowed"
-                : ""
-            }`}
-          >
-            {postsConfig.pagination.next}
-          </button>
-        </div>
-      )}
-
-      <PostsSearch />
     </section>
   );
 }

@@ -11,9 +11,19 @@ interface PostCardProps {
   pattern?: 'dots' | 'grid' | 'waves' | 'circles';
   imageUrl?: string;
   readingTime: number;
+  updated?: string;
 }
 
-export default function PostCard({ title, description, date, href, pattern = 'dots', imageUrl = '/placeholder.jpg', readingTime }: PostCardProps) {
+export default function PostCard({
+  title,
+  description,
+  date,
+  href,
+  pattern = 'dots',
+  imageUrl = '/placeholder.jpg',
+  readingTime,
+  updated
+}: PostCardProps) {
   const patterns = {
     dots: "bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] dark:bg-[radial-gradient(#404040_1px,transparent_1px)]",
     grid: "bg-[linear-gradient(#e5e7eb_1px,transparent_1px),linear-gradient(90deg,#e5e7eb_1px,transparent_1px)] [background-size:20px_20px] dark:bg-[linear-gradient(#404040_1px,transparent_1px),linear-gradient(90deg,#404040_1px,transparent_1px)]",
@@ -51,14 +61,27 @@ export default function PostCard({ title, description, date, href, pattern = 'do
               <p className="text-[11px] sm:text-base text-neutral-600 dark:text-neutral-400 mb-3 leading-relaxed">
                 <span>{description}</span>
               </p>
-              <div className="flex flex-wrap items-center gap-1 sm:gap-4 text-[10px] sm:text-sm font-medium text-neutral-600 dark:text-neutral-400">
-                <span>Posted on {date}</span>
-                <span className="flex items-center">
-                  <svg className="w-2.5 h-2.5 sm:w-4 sm:h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  {readingTime} min read
+
+              {/* BADGE: Posted on, Last updated, min read - SAMA KAYAK SKILL DI ABOUT */}
+              <div className="flex flex-wrap gap-1.5 mt-2">
+                <span className="px-2.5 py-0.5 text-[9px] sm:text-[11px] font-medium bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-200 rounded-full">
+                  Posted on {date}
                 </span>
+
+                {updated && (
+                  <span className="px-2.5 py-0.5 text-[9px] sm:text-[11px] font-medium bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-200 rounded-full">
+                    Last Updated {updated}
+                  </span>
+                )}
+
+                {readingTime > 0 && (
+                  <span className="px-2.5 py-0.5 text-[9px] sm:text-[11px] font-medium bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-200 rounded-full flex items-center gap-1">
+                    <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    {readingTime} min read
+                  </span>
+                )}
               </div>
             </div>
             <div className="hidden sm:block relative w-64 h-48 rounded-xl overflow-hidden flex-shrink-0">
@@ -66,7 +89,7 @@ export default function PostCard({ title, description, date, href, pattern = 'do
                 src={imageUrl}
                 alt={title}
                 fill
-                className="object-cover"
+                className="object-contain"
               />
             </div>
           </div>
