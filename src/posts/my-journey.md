@@ -24,8 +24,8 @@ image: "/assets/images/posts/thumbnail/Journey.png"
 </div>
 
 <img
-src="/assets/images/posts/konten/Keyboard.jpg"
-alt="Suasana gudang tempat gua pertama kali belajar tentang sistem"
+src="/assets/images/posts/konten/Keyboard.JPG"
+alt="Keyboard by Farich"
 style="width: 100%; max-width: 500px; height: auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); display: block; margin: 2rem auto; transition: transform 0.3s ease;"
 onmouseover="this.style.transform='scale(1.02)'"
 onmouseout="this.style.transform='scale(1)'"
