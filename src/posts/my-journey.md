@@ -17,6 +17,7 @@ image: "/assets/images/posts/thumbnail/Journey.png"
 ---
 
 ## Catatan 1
+
 ### Improvisasi
 
 <div style="font-style: italic; padding-left: 16px; border-left: 4px solid #ccc;" class="text-xs sm:text-base text-neutral-700 dark:text-neutral-300 border-neutral-300 dark:border-neutral-600">
@@ -36,9 +37,3 @@ onmouseout="this.style.transform='scale(1)'"
 </div>
 
 ---
-
-
-  
-
-
-
