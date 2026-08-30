@@ -12,7 +12,7 @@ import { ThemeProvider as NextThemesProvider } from 'next-themes';
 
 export default function ThemeProvider({ children, ...props }: { children: React.ReactNode }) {
   return (
-    // next-themes provider for dark/light mode
+    // next-themes provider for dark/light mode.
     // Uses 'class' strategy (adds 'dark' class to html element)
     <NextThemesProvider
       attribute="class"      // Uses CSS class 'dark' for dark mode
