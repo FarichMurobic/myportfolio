@@ -23,7 +23,7 @@ export default function PostsContent() {
     const fileContent = fs.readFileSync(filePath, 'utf8');
     const { data, content } = matter(fileContent);
 
-    // Calculate reading time from content
+    // Calculate reading time from content.
     const stats = readingTime(content);
     const readTime = Math.ceil(stats.minutes);
 
