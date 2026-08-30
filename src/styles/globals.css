@@ -1,26 +1,49 @@
+/**
+ * Global Styles - Portfolio
+ * @author Farich Murobic
+ * @email farichmurobiq11@gmail.com
+ * @github https://github.com/FarichMurobic
+ * @website https://farichmurobic.vercel.app
+ */
+
+/* ============================================
+   Tailwind Directives
+   ============================================ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================
+   Root Variables (Light Mode Default)
+   ============================================ */
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 255, 255, 255;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 0, 0, 0;              /* Black text */
+  --background-start-rgb: 255, 255, 255;  /* White background start */
+  --background-end-rgb: 255, 255, 255;    /* White background end */
 }
 
+/* ============================================
+   System Preference Dark Mode
+   ============================================ */
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 255, 255, 255;      /* White text */
+    --background-start-rgb: 0, 0, 0;      /* Black background start */
+    --background-end-rgb: 0, 0, 0;        /* Black background end */
   }
 }
 
+/* ============================================
+   Body Styles
+   ============================================ */
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-start-rgb));
 }
 
+/* ============================================
+   Dark Mode Class (for manual toggle)
+   ============================================ */
 .dark {
   color-scheme: dark;
-} 
+}
