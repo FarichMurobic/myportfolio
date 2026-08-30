@@ -10,7 +10,7 @@ export const aboutConfig = {
   // Page title
   title: "About Me",
   
-  // Description - career journey from operations to backend developer
+  // Description - career journey from operations to backend developer.
   description: "Berawal dari Sales Operations, Staff Administrasi, hingga Warehouse Admin—pengalaman operasional membentuk pola pikir sistematis saya. Kini sebagai Backend Developer (Java & Spring Boot), saya fokus membangun arsitektur backend yang scalable, terstruktur, serta mengutamakan data integrity, maintainability, dan performa tinggi.",
   
   // Profile image path
