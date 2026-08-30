@@ -1,41 +1,47 @@
-# Multiple Page Portfolio - A modern, responsive portfolio website built with Next.js 14, featuring multiple pages including a blog system, projects showcase, and about page.
+# Farich Murobic | Personal Portfolio
 
-#### Preview
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Next.js](https://img.shields.io/badge/Next.js-16.3.1-black)](https://nextjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.3.0-06B6D4)](https://tailwindcss.com/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6)](https://www.typescriptlang.org/)
 
- - [Demo](https://themewagon.github.io/multiplepage-portfolio/)
+> Personal portfolio website built with Next.js 14, Tailwind CSS, and TypeScript — showcasing my journey from operations to backend development.
 
-#### Download
- - [Download from ThemeWagon](https://themewagon.com/themes/multiplepage-portfolio/)
+## My Website
 
-## Getting Started
+**[farichmurobic.vercel.app](https://farichmurobic.vercel.app)**
 
-1. Clone Repository
-```
-git clone https://github.com/themewagon/multiplepage-portfolio.git
-```
-2. Install Dependencies
-```
-npm i
-```
-3. Run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Modern UI** — Clean, minimal, and professional design
+- **Dark/Light Mode** — Automatic system preference + manual toggle
+- **Fully Responsive** — Optimized for all devices (mobile, tablet, desktop)
+- **Blog System** — Write posts in Markdown (`.md`) with auto-generated reading time
+- **Projects Showcase** — Display projects with tech stack badges
+- **Certifications** — Showcase professional certifications with issuers
+- **Author Info** — Contact information embedded in every file
+- **Fast & SEO-Friendly** — Built with Next.js App Router and Turbopack
 
-## Author 
-```
-Design and code is completely written by tomcomtang and development team. 
-```
+## Tech Stack
+
+| **Category**      | **Technologies**              |
+| ----------------- | ----------------------------- |
+| **Framework**     | Next.js 14 (App Router)       |
+| **Language**      | TypeScript                    |
+| **Styling**       | Tailwind CSS, PostCSS         |
+| **UI Components** | Lucide React, Radix UI        |
+| **Blog**          | Markdown, gray-matter, marked |
+| **Theming**       | next-themes                   |
+| **Deployment**    | Vercel                        |
 
 ## License
 
- - Design and Code is Copyright &copy; <a href="https://github.com/tomcomtang" target="_blank">tomcomtang</a>
- - Licensed cover under [ISC]
- - Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+This project is open source and available under the MIT License.
+
+## Author
+
+- Farich Murobic
+- GitHub: @FarichMurobic
+- LinkedIn: Farich Murobic
+- Email: farichmurobiq11@gmail.com
+- Website: farichmurobic.vercel.app
