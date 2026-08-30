@@ -19,7 +19,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  // Mount component to avoid hydration mismatch
+  // Mount component to avoid hydration mismatch.
   useEffect(() => {
     setMounted(true);
   }, []);
