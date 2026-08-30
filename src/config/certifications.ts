@@ -1,6 +1,19 @@
+/**
+ * Certifications Page Configuration - Portfolio
+ * @author Farich Murobic
+ * @email farichmurobiq11@gmail.com
+ * @github https://github.com/FarichMurobic
+ * @website https://farichmurobic.vercel.app
+ */
+
 export const certificationsConfig = {
+  // Page title
   title: "My Certifications",
+  
+  // Page description
   description: "Merupakan bentuk pengakuan formal terhadap kompetensi teknis dan keahlian profesional dalam pengembangan perangkat lunak kontemporer—meliputi analisis kebutuhan, perancangan solusi, implementasi sistem, hingga pengelolaan infrastruktur TI yang aman dan terukur.",
+  
+  // List of certifications
   items: [
     {
       id: 1,
