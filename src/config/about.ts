@@ -1,7 +1,22 @@
+/**
+ * About Page Configuration - Portfolio
+ * @author Farich Murobic
+ * @email farichmurobiq11@gmail.com
+ * @github https://github.com/FarichMurobic
+ * @website https://farichmurobiq11@gmail.com
+ */
+
 export const aboutConfig = {
+  // Page title
   title: "About Me",
+  
+  // Description - career journey from operations to backend developer
   description: "Berawal dari Sales Operations, Staff Administrasi, hingga Warehouse Admin—pengalaman operasional membentuk pola pikir sistematis saya. Kini sebagai Backend Developer (Java & Spring Boot), saya fokus membangun arsitektur backend yang scalable, terstruktur, serta mengutamakan data integrity, maintainability, dan performa tinggi.",
+  
+  // Profile image path
   image: "/assets/images/about/Me.png",
+  
+  // Technical skills (badge style in UI)
   skills: [
     "Java",
     "Spring Boot",
@@ -15,6 +30,8 @@ export const aboutConfig = {
     "Artificial Intelligence (Computer Vision)",
     "English - Reading Technical Documentation"
   ],
+  
+  // Work experience section
   experience: {
     title: "Experience",
     items: [
@@ -41,6 +58,8 @@ export const aboutConfig = {
       }
     ]
   },
+  
+  // Social media & contact section
   connect: {
     title: "Let's Connect",
     description: "I'm always eager to connect with like-minded professionals, explore new opportunities, and exchange ideas. Let's have a chat!",
@@ -58,10 +77,9 @@ export const aboutConfig = {
         url: "https://instagram.com/murobiqfarich"
       },
       email: {
-            text: "email",
-            url: "mailto:farichmurobiq11@gmail.com"
+        text: "email",
+        url: "mailto:farichmurobiq11@gmail.com"
       }
     }
   }
-
-}; 
+};
