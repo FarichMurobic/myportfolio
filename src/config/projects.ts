@@ -1,8 +1,23 @@
+/**
+ * Projects Page Configuration - Portfolio
+ * @author Farich Murobic
+ * @email farichmurobiq11@gmail.com
+ * @github https://github.com/FarichMurobic
+ * @website https://farichmurobic.vercel.app
+ */
+
 export const projectsConfig = {
+  // Page title
   title: "My Projects",
+  
+  // Page description - journey and skills overview
   description: "Portofolio ini memuat proyek-proyek awal perjalanan saya sebagai Backend Developer—mulai dari personal portfolio website, proyek pembelajaran Java fundamental, hingga implementasi REST API pertama saya menggunakan Spring Boot. Meskipun masih dalam tahap pengembangan, setiap proyek mencerminkan fondasi teknis yang solid, pemahaman terhadap OOP dan algoritma, serta kemampuan membangun sistem backend yang terstruktur.",
+  
+  // UI labels
   backButton: "Back to Home",
   noProjects: "No projects found.",
+  
+  // List of projects
   items: [
     {
       title: "Java Fundamentals & Object-Oriented Programming",
@@ -26,4 +41,4 @@ export const projectsConfig = {
       techStack: ["Java", "Spring Boot", "MySQL"]
     }
   ]
-} as const; 
+} as const;
