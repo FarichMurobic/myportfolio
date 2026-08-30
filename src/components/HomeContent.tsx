@@ -1,15 +1,27 @@
+/**
+ * Home Page Content - Portfolio
+ * @author Farich Murobic
+ * @email farichmurobiq11@gmail.com
+ * @github https://github.com/FarichMurobic
+ * @website https://farichmurobic.vercel.app
+ */
+
 'use client';
 
 import { useState, useEffect } from 'react';
 import Link from "next/link";
 import { homeConfig } from '@/config/home';
 
-// Move theme-related logic to this client component
+/**
+ * ThemeAwareImage - Displays a floating tech background image
+ * that adapts to light/dark mode
+ */
 function ThemeAwareImage() {
   const [mounted, setMounted] = useState(false);
   const [theme, setTheme] = useState('light');
   const [imageSrc, setImageSrc] = useState('/assets/images/tech-background-light.svg');
 
+  // Initialize theme from localStorage or system preference
   useEffect(() => {
     setMounted(true);
     const savedTheme = localStorage.getItem('theme');
@@ -22,6 +34,7 @@ function ThemeAwareImage() {
     }
   }, []);
 
+  // Listen for theme changes via class toggle
   useEffect(() => {
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
@@ -41,11 +54,13 @@ function ThemeAwareImage() {
     return () => observer.disconnect();
   }, []);
 
+  // Prevent hydration mismatch
   if (!mounted) {
     return null;
   }
 
   return (
+    // Responsive image container with floating animation
     <div className="relative w-[150px] h-[150px] sm:w-[250px] sm:h-[250px] md:w-[400px] md:h-[400px] lg:w-[550px] lg:h-[550px]">
       <img
         src={imageSrc}
@@ -56,6 +71,7 @@ function ThemeAwareImage() {
           transform: 'scale(1.2)',
         }}
       />
+      {/* Floating animation keyframes */}
       <style jsx>{`
         @keyframes float {
           0% { transform: scale(1.2); }
@@ -67,26 +83,37 @@ function ThemeAwareImage() {
   );
 }
 
-// Server component version of HomeContent
+/**
+ * HomeContent - Main home page component
+ * Displays greeting, description, and call-to-action buttons
+ */
 export default function HomeContent() {
   return (
+    // Main container: centered, with responsive padding
     <div className="flex-1 flex items-center justify-center px-4 sm:px-7 lg:px-0 pt-16 md:pt-0 pb-2 md:pb-12" style={{ transform: 'translateY(0px)' }}>
       <div className="flex flex-col-reverse md:flex-row items-center justify-between w-full max-w-4xl mx-auto px-0 gap-2 md:gap-12">
 
-        {/* Text Section - Full width di mobile */}
+        {/* Text Section */}
         <div className="w-full md:w-[50%] text-left max-w-full">
           <div className="text-left">
+            {/* Greeting */}
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-neutral-900 dark:text-white break-words">
               Hello, I'm
             </h1>
+            {/* Name */}
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-neutral-900 dark:text-white mt-1 break-words">
               Farich Murobic
             </h1>
           </div>
+          
+          {/* Description */}
           <p className="mt-3 text-base sm:text-lg leading-7 text-neutral-600 dark:text-neutral-400 break-words">
             {homeConfig.description}
           </p>
+          
+          {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 justify-center md:justify-start">
+            {/* About button */}
             <Link
               href="/about"
               className="group inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-white bg-neutral-900 rounded-lg hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-100 transition-all duration-300 hover:scale-105 cursor-pointer"
@@ -107,6 +134,7 @@ export default function HomeContent() {
               </svg>
             </Link>
 
+            {/* Posts button */}
             <Link
               href="/posts"
               className="group inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-neutral-900 bg-white border border-neutral-300 rounded-lg hover:bg-neutral-50 dark:bg-neutral-900 dark:text-white dark:border-neutral-700 dark:hover:bg-neutral-800 transition-all duration-300 hover:scale-105 cursor-pointer"
@@ -129,7 +157,7 @@ export default function HomeContent() {
           </div>
         </div>
 
-        {/* Image Section - Muncul di bawah text di mobile */}
+        {/* Image Section - Hidden on mobile, visible on desktop */}
         <div className="hidden md:flex w-full md:w-[50%] items-center justify-center bg-transparent">
           <ThemeAwareImage />
         </div>

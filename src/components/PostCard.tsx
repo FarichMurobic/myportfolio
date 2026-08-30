@@ -1,3 +1,11 @@
+/**
+ * Post Card Component - Blog Post Preview
+ * @author Farich Murobic
+ * @email farichmurobiq11@gmail.com
+ * @github https://github.com/FarichMurobic
+ * @website https://farichmurobic.vercel.app
+ */
+
 'use client';
 
 import Link from "next/link";
@@ -24,6 +32,7 @@ export default function PostCard({
   readingTime,
   updated
 }: PostCardProps) {
+  // Background patterns for card decoration
   const patterns = {
     dots: "bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] dark:bg-[radial-gradient(#404040_1px,transparent_1px)]",
     grid: "bg-[linear-gradient(#e5e7eb_1px,transparent_1px),linear-gradient(90deg,#e5e7eb_1px,transparent_1px)] [background-size:20px_20px] dark:bg-[linear-gradient(#404040_1px,transparent_1px),linear-gradient(90deg,#404040_1px,transparent_1px)]",
@@ -34,19 +43,28 @@ export default function PostCard({
   return (
     <Link href={href}>
       <div className="relative border border-transparent border-dashed cursor-pointer p-7 group rounded-2xl">
+        
+        {/* Border layer 1 - background with pattern */}
         <div className="absolute inset-0 z-20 w-full h-full bg-white dark:bg-neutral-950 border border-dashed rounded-2xl border-neutral-300 dark:border-neutral-700 sm:duration-300 sm:ease-out sm:group-hover:-translate-x-1 sm:group-hover:-translate-y-1">
           <div className={`absolute inset-0 ${patterns[pattern]} opacity-50`}></div>
         </div>
 
+        {/* Border layer 2 - animated on hover (desktop only) */}
         <div className="absolute inset-0 z-10 w-full h-full border border-dashed rounded-2xl border-neutral-300 dark:border-neutral-700 sm:duration-300 sm:ease-out sm:group-hover:translate-x-1 sm:group-hover:translate-y-1"></div>
 
+        {/* Card content - animated on hover (desktop only) */}
         <div className="relative z-30 sm:duration-300 sm:ease-out sm:group-hover:-translate-x-1 sm:group-hover:-translate-y-1">
           <div className="flex gap-8">
+            
+            {/* Text content */}
             <div className="flex-1">
+              
+              {/* Title with arrow icon */}
               <h2 className="flex items-center mb-4">
                 <span className="text-sm sm:text-xl lg:text-2xl font-bold leading-tight tracking-tight text-neutral-900 dark:text-neutral-100">
                   {title}
                 </span>
+                {/* Arrow icon - appears on hover (desktop only) */}
                 <svg className="hidden sm:block sm:group-hover:translate-x-0 flex-shrink-0 translate-y-0.5 -translate-x-1 w-4 h-4 stroke-current ml-1 transition-all ease-in-out duration-200 transform opacity-0 sm:group-hover:opacity-100 text-neutral-600 dark:text-neutral-400" viewBox="0 0 13 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd" strokeLinecap="round" strokeLinejoin="round">
                     <g id="svg" transform="translate(0.666667, 2.333333)" stroke="currentColor" strokeWidth="2.4">
@@ -58,22 +76,27 @@ export default function PostCard({
                   </g>
                 </svg>
               </h2>
+              
+              {/* Description */}
               <p className="text-[11px] sm:text-base text-neutral-600 dark:text-neutral-400 mb-3 leading-relaxed">
                 <span>{description}</span>
               </p>
 
-              {/* BADGE: Posted on, Last updated, min read - SAMA KAYAK SKILL DI ABOUT */}
+              {/* Badges: Posted on, Last updated, min read (same style as skill tags in About) */}
               <div className="flex flex-wrap gap-1.5 mt-2">
+                {/* Posted on badge */}
                 <span className="px-2.5 py-0.5 text-[9px] sm:text-[11px] font-medium bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-200 rounded-full">
                   Posted on {date}
                 </span>
 
+                {/* Last updated badge (conditional) */}
                 {updated && (
                   <span className="px-2.5 py-0.5 text-[9px] sm:text-[11px] font-medium bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-200 rounded-full">
                     Last Updated {updated}
                   </span>
                 )}
 
+                {/* Reading time badge (conditional) */}
                 {readingTime > 0 && (
                   <span className="px-2.5 py-0.5 text-[9px] sm:text-[11px] font-medium bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-200 rounded-full flex items-center gap-1">
                     <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -84,6 +107,8 @@ export default function PostCard({
                 )}
               </div>
             </div>
+            
+            {/* Thumbnail image - desktop only */}
             <div className="hidden sm:block relative w-64 h-48 rounded-xl overflow-hidden flex-shrink-0">
               <Image
                 src={imageUrl}

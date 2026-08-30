@@ -1,23 +1,50 @@
+/**
+ * Icons Component - Portfolio
+ * Collection of SVG icons used across the application
+ * @author Farich Murobic
+ * @email farichmurobiq11@gmail.com
+ * @github https://github.com/FarichMurobic
+ * @website https://farichmurobic.vercel.app
+ */
+
+/**
+ * React Icon - Represents React framework
+ * Atom symbol with orbiting electrons
+ */
 export const ReactIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neutral-600 dark:text-neutral-400">
+    {/* Outer atom ring */}
     <circle cx="12" cy="12" r="10"/>
+    {/* Orbital paths */}
     <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
     <path d="M2 12h20"/>
   </svg>
 );
 
+/**
+ * Web Frontend Icon - Represents web/frontend development
+ * Monitor with cursor or screen outline
+ */
 export const WebFrontendIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neutral-600 dark:text-neutral-400">
+    {/* Monitor screen */}
     <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+    {/* Monitor stand */}
     <line x1="8" y1="21" x2="16" y2="21"/>
+    {/* Monitor base */}
     <line x1="12" y1="17" x2="12" y2="21"/>
   </svg>
 );
 
+/**
+ * Node.js Icon - Represents Node.js / Backend development
+ * Hexagon with Node.js logo symbolism
+ */
 export const NodeJsIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-neutral-600 dark:text-neutral-400">
+    {/* Hexagon shape (Node.js logo style) */}
     <path d="M12 2L2 7l10 5 10-5-10-5z"/>
     <path d="M2 17l10 5 10-5"/>
     <path d="M2 12l10 5 10-5"/>
   </svg>
-); 
+);

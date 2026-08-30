@@ -1,3 +1,11 @@
+/**
+ * Navbar Component - Main Navigation
+ * @author Farich Murobic
+ * @email farichmurobiq11@gmail.com
+ * @github https://github.com/FarichMurobic
+ * @website https://farichmurobic.vercel.app
+ */
+
 'use client';
 
 import Link from 'next/link';
@@ -11,11 +19,12 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
 
+  // Mount component to avoid hydration mismatch
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  // Close menu when route changes
+  // Close mobile menu when route changes
   useEffect(() => {
     setIsMenuOpen(false);
   }, [pathname]);
@@ -28,10 +37,12 @@ export default function Navbar() {
     setIsMenuOpen(false);
   };
 
+  // Prevent hydration mismatch
   if (!mounted) {
     return null;
   }
 
+  // Check if current path is active
   const isActive = (path: string) => {
     if (path === '/') {
       return pathname === '/';
@@ -42,10 +53,13 @@ export default function Navbar() {
   return (
     <header id="header" className="absolute top-0 z-50 w-full h-20">
       <div className="flex items-center justify-between h-full max-w-7xl pl-6 pr-4 mx-auto border-b border-l-0 border-r-0 border-transparent select-none lg:border-r lg:border-l lg:rounded-b-xl">
+        
+        {/* Site logo / author name */}
         <Link href="/" className="h-5 text-base group relative z-30 flex items-center space-x-1.5 text-black dark:text-white font-semibold whitespace-nowrap">
           <span className="-translate-y-0.5">{globalConfig.site.author}</span>
         </Link>
 
+        {/* Mobile menu backdrop */}
         <div
           id="mobileMenuBackground"
           onClick={closeMenu}
@@ -55,6 +69,8 @@ export default function Navbar() {
         ></div>
 
         <nav className="relative z-30 flex flex-row-reverse justify-start w-full text-sm sm:justify-end text-neutral-500 dark:text-neutral-400 sm:flex-row">
+          
+          {/* Hamburger icon (open) */}
           <div
             id="openMenu"
             onClick={toggleMenu}
@@ -75,6 +91,7 @@ export default function Navbar() {
             </svg>
           </div>
 
+          {/* Close icon (X) */}
           <div
             id="closeMenu"
             onClick={toggleMenu}
@@ -95,18 +112,19 @@ export default function Navbar() {
             </svg>
           </div>
 
+          {/* Navigation menu */}
           <div
             id="menu"
             className={`fixed top-[75px] ease-out duration-300 sm:top-0 w-full left-0 sm:py-0 pt-4 pb-4 left-0 z-40 flex-col items-center justify-start ${
               isMenuOpen ? 'flex' : 'hidden'
             } w-full h-auto text-sm sm:text-base sm:h-auto sm:relative sm:flex-row sm:flex sm:text-sm sm:w-auto sm:pr-0 sm:pt-0`}
           >
-            {/* Background - CUMA DI MOBILE */}
+            {/* Mobile menu background - dashed border effect */}
             <div className="absolute inset-0 top-0 right-0 block w-full h-full px-4 sm:hidden">
               <div className="relative w-full h-full bg-white border border-dashed border-neutral-300 dark:border-neutral-700 backdrop-blur-sm rounded-2xl dark:bg-neutral-950"></div>
             </div>
 
-            {/* Item menu - CUMA DI MOBILE YANG BERUBAH */}
+            {/* Navigation items */}
             <div className="relative z-10 flex flex-col items-center w-full gap-1 px-4 py-4 sm:flex-row sm:gap-0 sm:px-0 sm:py-0 sm:w-auto">
               {globalConfig.navigation.items.map((item) => (
                 <Link
@@ -125,9 +143,10 @@ export default function Navbar() {
             </div>
           </div>
 
+          {/* Theme toggle (dark/light mode) */}
           <ThemeToggle />
         </nav>
       </div>
     </header>
   );
-} 
+}

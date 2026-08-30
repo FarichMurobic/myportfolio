@@ -1,3 +1,11 @@
+/**
+ * Tech Background Component - Portfolio
+ * @author Farich Murobic
+ * @email farichmurobiq11@gmail.com
+ * @github https://github.com/FarichMurobic
+ * @website https://farichmurobic.vercel.app
+ */
+
 import { useEffect, useState, useRef } from 'react';
 
 export default function TechBackground() {
@@ -5,7 +13,7 @@ export default function TechBackground() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Listen for theme changes
+    // Listen for theme changes via class toggle on documentElement
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         if (mutation.attributeName === 'class') {
@@ -20,11 +28,11 @@ export default function TechBackground() {
       attributeFilter: ['class'],
     });
 
-    // Initialize theme
+    // Initialize theme on mount
     const isDark = document.documentElement.classList.contains('dark');
     setTheme(isDark ? 'dark' : 'light');
 
-    // Add event listeners
+    // Add mouse event listeners for hover effect on background
     const container = containerRef.current;
     if (container) {
       const handleMouseEnter = () => {
@@ -52,7 +60,9 @@ export default function TechBackground() {
 
   return (
     <>
-      {/* Test overlay layer */}
+      {/* ============================================
+          TEST OVERLAY LAYER (for development only)
+          ============================================ */}
       <div 
         className="fixed left-[270px] top-1/2 -translate-y-1/2 w-[800px] h-[800px] 
           bg-blue-500/50 hover:bg-green-500/50 transition-colors duration-300
@@ -64,7 +74,9 @@ export default function TechBackground() {
         </div>
       </div>
 
-      {/* Original background */}
+      {/* ============================================
+          TECH BACKGROUND SVG
+          ============================================ */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
         <div 
           ref={containerRef}
@@ -83,4 +95,4 @@ export default function TechBackground() {
       </div>
     </>
   );
-} 
+}
