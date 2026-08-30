@@ -16,7 +16,7 @@ export default function ThemeToggle() {
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
-  // Ensure component is mounted to avoid hydration mismatch
+  // Ensure component is mounted to avoid hydration mismatch.
   useEffect(() => {
     setMounted(true)
   }, [])
