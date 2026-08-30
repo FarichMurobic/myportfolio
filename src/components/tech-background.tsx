@@ -13,7 +13,7 @@ export default function TechBackground() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Listen for theme changes via class toggle on documentElement
+    // Listen for theme changes via class toggle on documentElement.
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         if (mutation.attributeName === 'class') {
