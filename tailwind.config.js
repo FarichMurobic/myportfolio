@@ -1,3 +1,4 @@
+// Author: Farich Murobic <farichmurobiq11@gmail.com> (https://github.com/FarichMurobic)
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
