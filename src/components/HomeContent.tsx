@@ -13,7 +13,7 @@ import Link from "next/link";
 import { homeConfig } from '@/config/home';
 
 /**
- * ThemeAwareImage - Displays a floating tech background image
+ * ThemeAwareImage - Displays a floating tech background image.
  * that adapts to light/dark mode
  */
 function ThemeAwareImage() {
