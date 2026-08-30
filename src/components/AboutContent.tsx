@@ -1,22 +1,35 @@
+/**
+ * About Page Content - Portfolio
+ * @author Farich Murobic
+ * @email farichmurobiq11@gmail.com
+ * @github https://github.com/FarichMurobic
+ * @website https://farichmurobic.vercel.app
+ */
+
 import Image from "next/image";
 import { aboutConfig } from "@/config/about";
 
 export default function AboutContent() {
   return (
+    // Main container
     <section className="relative z-20 w-full max-w-4xl mx-auto mt-20 sm:mt-32 mb-12 px-7 sm:px-7">
-      {/* Title */}
+      
+      {/* Title section with dashed border */}
       <div className="relative z-20 w-full mx-auto lg:mx-0 border border-dashed border-neutral-300 dark:border-neutral-600 md:border-0 rounded-xl p-5 md:p-0">
         <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 text-center sm:text-left">
           {aboutConfig.title}
         </h2>
 
-        {/* Profile & Skills */}
+        {/* Profile & Skills section */}
         <div className="flex flex-col md:flex-row gap-6 sm:gap-8 mt-4 sm:mt-5 lg:mt-6 px-0 max-w-4xl mx-auto">
+          
+          {/* Description & Skills */}
           <div className="w-full md:w-1/2 flex flex-col">
             <p className="text-xs sm:text-base lg:text-lg leading-6 text-neutral-600 dark:text-neutral-400 sm:leading-7 lg:leading-8 text-left">
               {aboutConfig.description}
             </p>
 
+            {/* Skill tags - like badges */}
             <div className="mt-5 sm:mt-auto sm:pt-4 flex flex-wrap gap-1.5 sm:gap-2 justify-center sm:justify-start">
               {aboutConfig.skills.map((skill, index) => (
                 <span
@@ -29,12 +42,12 @@ export default function AboutContent() {
             </div>
           </div>
 
-          {/* Profile Image - Desktop only */}
+          {/* Profile Image - Desktop only with double border effect */}
           <div className="hidden md:flex relative w-[280px] h-[340px] sm:w-[360px] sm:h-[440px] group">
-            {/* Back border */}
+            {/* Back border (shifted) */}
             <span className="absolute inset-0 z-10 block w-full h-full border border-dashed rounded-xl border-neutral-300 dark:border-neutral-600 translate-x-1 translate-y-1"></span>
 
-            {/* Front border + image */}
+            {/* Front border + image (shifted opposite) */}
             <div className="relative z-20 w-full h-full -translate-x-1 -translate-y-1">
               <div className="absolute inset-0 border border-dashed rounded-xl border-neutral-300 dark:border-neutral-600 pointer-events-none"></div>
 
@@ -51,9 +64,10 @@ export default function AboutContent() {
         </div>
       </div>
 
-      {/* Experience & Connect */}
+      {/* Experience & Connect section */}
       <div className="flex flex-col md:flex-row mt-12 sm:mt-20">
-        {/* Experience */}
+        
+        {/* Experience Section */}
         <div className="flex-1 min-w-0">
           <h2 className="mb-2 text-xl sm:text-2xl font-bold dark:text-neutral-200 text-center sm:text-left">
             {aboutConfig.experience.title}
@@ -66,10 +80,11 @@ export default function AboutContent() {
                 className="pb-8 sm:pb-10 border-l border-gray-200 last:border-l-0 dark:border-neutral-700"
               >
                 <div className="relative flex flex-col justify-start pl-7 sm:pl-12">
-                  {/* Timeline Icon */}
+                  
+                  {/* Timeline Icon - dynamic based on role */}
                   <div className="absolute top-0 left-0 z-40 flex items-center justify-center -translate-x-1/2 bg-white border rounded-full dark:bg-neutral-950 w-9 h-9 sm:w-14 sm:h-14 border-neutral-300 dark:border-neutral-700">
                     {item.role.includes("Java") ? (
-                      // Icon Kode untuk Java Developer
+                      // Code icon for Java Developer
                       <svg
                         className="w-4 h-4 sm:w-8 sm:h-8 text-neutral-700 dark:text-neutral-300"
                         fill="none"
@@ -84,7 +99,7 @@ export default function AboutContent() {
                         />
                       </svg>
                     ) : item.role.includes("Staff") ? (
-                      // Icon File/Dokumen untuk Staff Administrasi
+                      // File/Document icon for Staff Administrasi
                       <svg
                         className="w-4 h-4 sm:w-8 sm:h-8 text-neutral-700 dark:text-neutral-300"
                         fill="none"
@@ -99,7 +114,7 @@ export default function AboutContent() {
                         />
                       </svg>
                     ) : item.role.includes("Admin") ? (
-                      // Icon Box untuk Admin Warehouse
+                      // Box icon for Admin Warehouse
                       <svg
                         className="w-4 h-4 sm:w-8 sm:h-8 text-neutral-700 dark:text-neutral-300"
                         fill="none"
@@ -114,7 +129,7 @@ export default function AboutContent() {
                         />
                       </svg>
                     ) : (
-                      // Icon User untuk Sales
+                      // User icon for Sales
                       <svg
                         className="w-4 h-4 sm:w-8 sm:h-8 text-neutral-700 dark:text-neutral-300"
                         fill="none"
@@ -131,6 +146,7 @@ export default function AboutContent() {
                     )}
                   </div>
 
+                  {/* Experience details */}
                   <p className="text-[10px] sm:text-xs uppercase text-neutral-400 dark:text-neutral-500">
                     {item.period}
                   </p>
@@ -147,7 +163,7 @@ export default function AboutContent() {
                     {item.description}
                   </p>
 
-                  {/* Tombol View Certificate - HANYA KALAU ADA certificateUrl */}
+                  {/* View Certificate button - only if certificateUrl exists */}
                   {item.certificateUrl && (
                     <a
                       href={item.certificateUrl}
@@ -165,14 +181,14 @@ export default function AboutContent() {
           </div>
         </div>
 
-        {/* Profile Image - Mobile only */}
+        {/* Profile Image - Mobile only with double border effect */}
         <div className="flex md:hidden justify-center mt-2 mb-10">
           <div className="relative w-[160px] h-[170px] group">
 
-            {/* Back border */}
+            {/* Back border (shifted) */}
             <span className="absolute inset-0 z-10 block w-full h-full border border-dashed rounded-xl border-neutral-300 dark:border-neutral-600 translate-x-1 translate-y-1"></span>
 
-            {/* Front border + image */}
+            {/* Front border + image (shifted opposite) */}
             <div className="relative z-20 w-full h-full -translate-x-1 -translate-y-1">
               <div className="absolute inset-0 border border-dashed rounded-xl border-neutral-300 dark:border-neutral-600 pointer-events-none"></div>
 
@@ -188,7 +204,7 @@ export default function AboutContent() {
           </div>
         </div>
 
-        {/* Connect */}
+        {/* Connect Section - Social Links */}
         <div className="w-full md:w-[360px] md:ml-8 mt-4 md:mt-0 min-w-0">
           <h2 className="mb-2 text-xl sm:text-2xl font-bold dark:text-neutral-200 text-center md:text-left">
             {aboutConfig.connect.title}
@@ -199,8 +215,9 @@ export default function AboutContent() {
               {aboutConfig.connect.description}
             </p>
 
+            {/* Social Media Icons - Neutral color (black/white) */}
             <div className="flex justify-center md:justify-start gap-4 mt-4">
-              {/* GitHub - Hitam/Putih */}
+              {/* GitHub */}
               <a
                 href={aboutConfig.connect.links.github.url}
                 target="_blank"
@@ -217,7 +234,7 @@ export default function AboutContent() {
                 </svg>
               </a>
 
-              {/* LinkedIn - Hitam/Putih */}
+              {/* LinkedIn */}
               <a
                 href={aboutConfig.connect.links.linkedin.url}
                 target="_blank"
@@ -234,7 +251,7 @@ export default function AboutContent() {
                 </svg>
               </a>
 
-              {/* Instagram - Hitam/Putih */}
+              {/* Instagram */}
               <a
                 href={aboutConfig.connect.links.instagram.url}
                 target="_blank"
@@ -251,7 +268,7 @@ export default function AboutContent() {
                 </svg>
               </a>
 
-              {/* Email - Hitam/Putih */}
+              {/* Email */}
               <a
                 href={aboutConfig.connect.links.email.url}
                 className="text-neutral-700 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition"
