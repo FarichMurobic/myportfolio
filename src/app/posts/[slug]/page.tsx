@@ -1,13 +1,26 @@
+/**
+ * Blog Post Detail Page - Dynamic Route
+ * @author Farich Murobic
+ * @email farichmurobiq11@gmail.com
+ * @github https://github.com/FarichMurobic
+ * @website https://farichmurobic.vercel.app
+ */
+
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { marked } from 'marked';
-import readingTime from 'reading-time'; // <-- TAMBAHIN INI
+import readingTime from 'reading-time';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
+// Directory where blog posts (.md files) are stored
 const postsDirectory = path.join(process.cwd(), 'src/posts');
 
+/**
+ * Generate static paths for all blog posts at build time
+ * This enables pre-rendering for faster page loads
+ */
 export async function generateStaticParams() {
   const files = fs.readdirSync(postsDirectory);
   return files.map((file) => ({
@@ -15,42 +28,58 @@ export async function generateStaticParams() {
   }));
 }
 
+/**
+ * Blog Post Detail Page
+ * Renders a single blog post from markdown file
+ */
 export default async function Post({ params }: { params: Promise<{ slug: string }> }) {
+  // Extract slug from URL params
   const { slug } = await params;
   const filePath = path.join(postsDirectory, `${slug}.md`);
   const fileContent = fs.readFileSync(filePath, 'utf8');
+
+  // Parse frontmatter and content
   const { data, content } = matter(fileContent);
 
-  // Bersihkan konten
+  // Clean up content: remove metadata, first heading, author, trailing spaces
   const cleanContent = content
-    .replace(/^---[\s\S]*?---\s*/, '')
-    .replace(/^# .*\n?/m, '')
-    .replace(/\nFarich Murobic/g, '')
-    .replace(/\n\s*\n$/, '');
+    .replace(/^---[\s\S]*?---\s*/, '') // Remove frontmatter metadata
+    .replace(/^# .*\n?/m, '') // Remove first heading (# Title)
+    .replace(/\nFarich Murobic/g, '') // Remove author
+    .replace(/\n\s*\n$/, ''); // Remove trailing empty lines
 
+  // Convert markdown to HTML
   const htmlContent = marked(cleanContent);
 
-  // HITUNG WAKTU BACA OTOMATIS
+  // Calculate reading time automatically
   const stats = readingTime(cleanContent);
   const readTime = Math.ceil(stats.minutes);
 
   return (
     <main className="min-h-screen flex flex-col">
       <div className="relative flex-grow flex flex-col overflow-hidden">
+        {/* Background layer */}
         <div className="absolute inset-0 z-0">
+          {/* Subtle grid pattern */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:28px_48px] -z-10"></div>
+          {/* Glowing orb effect */}
           <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[1200px] w-[1200px] rounded-full bg-neutral-400 opacity-10 blur-[100px]"></div>
         </div>
 
+        {/* Navbar */}
         <Navbar />
 
+        {/* Blog post content */}
         <section className="relative z-20 max-w-4xl mx-auto mt-20 md:mt-32 mb-12 px-7 lg:px-0">
           <div className="relative p-7 rounded-2xl">
+            {/* Dashed border wrapper */}
             <div className="absolute inset-0 z-20 w-full h-full bg-transparent border border-dashed border-neutral-300 dark:border-neutral-700 rounded-2xl"></div>
 
             <div className="relative z-30">
+              {/* Post title from frontmatter */}
               <h1 className="text-3xl font-bold mb-2">{data.title}</h1>
 
+              {/* Blog content with typography styling */}
               <div className="prose dark:prose-invert max-w-none prose-sm lg:prose-base
                 max-md:[&_h1]:!text-[15px]
                 max-md:[&_h2]:!text-[14px]
@@ -65,6 +94,8 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
           </div>
         </section>
       </div>
+      
+      {/* Footer */}
       <Footer />
     </main>
   );
