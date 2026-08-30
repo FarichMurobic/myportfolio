@@ -1,9 +1,9 @@
 # Farich Murobic | Personal Portfolio
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Next.js](https://img.shields.io/badge/Next.js-16.3.1-black)](https://nextjs.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.3.0-06B6D4)](https://tailwindcss.com/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6)](https://www.typescriptlang.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
+[![Next.js](https://img.shields.io/badge/Next.js-16.3.1-yellow)](https://nextjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.3.0-green)](https://tailwindcss.com/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
 
 > Personal portfolio website built with Next.js 14, Tailwind CSS, and TypeScript — showcasing my journey from operations to backend development.
 
