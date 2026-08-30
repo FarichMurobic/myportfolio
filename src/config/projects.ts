@@ -29,7 +29,7 @@ export const projectsConfig = {
     {
       title: "Personal Portfolio Website",
       description: "Personal portfolio website built with Next.js 14 and Tailwind CSS. Showcasing my journey in software development—featuring projects, certifications, and technical insights. Fully responsive with dark mode support.",
-      href: "https://farichmurobic.vercel.app",
+      href: "https://github.com/FarichMurobic/myportfolio",
       imageUrl: "/assets/images/projects/Portfolio.jpeg",
       techStack: ["Next.js 14", "Tailwind CSS", "TypeScript"]
     },
