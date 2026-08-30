@@ -12,7 +12,7 @@ import { projectsConfig } from "@/config/projects";
 
 export default function ProjectsContent() {
   return (
-    // Main container
+    // Main container.
     <section className="relative z-20 max-w-4xl mx-auto mt-20 md:mt-32 mb-12 px-7 lg:px-0">
       
       {/* Header section: title & description */}
