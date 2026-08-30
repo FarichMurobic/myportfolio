@@ -8,7 +8,7 @@
  */
 
 /**
- * React Icon - Represents React framework
+ * React Icon - Represents React framework.
  * Atom symbol with orbiting electrons
  */
 export const ReactIcon = () => (
