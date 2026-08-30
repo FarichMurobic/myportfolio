@@ -29,6 +29,10 @@ export default function RootLayout({
   return (
     // Root HTML element with suppression for hydration mismatch
     <html lang="en" suppressHydrationWarning>
+      {/* HEAD: Favicon */}
+      <head>
+        <link rel="icon" href="/assets/images/cat.svg" type="image/svg+xml" />
+      </head>
       {/* Body with Inter font */}
       <body className={inter.className}>
         {/* Theme provider for dark/light mode */}
