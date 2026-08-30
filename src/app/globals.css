@@ -1,23 +1,45 @@
+/**
+ * Global Styles - Portfolio
+ * @author Farich Murobic
+ * @email farichmurobiq11@gmail.com
+ * @github https://github.com/FarichMurobic
+ * @website https://farichmurobic.vercel.app
+ */
+
+/* ============================================
+   Tailwind Directives
+   ============================================ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================
+   Root Variables (Light Mode Default)
+   ============================================ */
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-rgb: 255, 255, 255;
+  --foreground-rgb: 0, 0, 0;      /* Black text */
+  --background-rgb: 255, 255, 255; /* White background */
 }
 
+/* ============================================
+   Dark Mode Variables
+   ============================================ */
 .dark {
-  --foreground-rgb: 255, 255, 255;
-  --background-rgb: 23, 23, 23;
+  --foreground-rgb: 255, 255, 255; /* White text */
+  --background-rgb: 23, 23, 23;    /* Dark background (#171717) */
 }
 
+/* ============================================
+   Body Styles
+   ============================================ */
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
 }
 
-/* Konten blog lebih kecil di mobile */
+/* ============================================
+   Blog Content - Mobile Optimization (max-width: 640px)
+   ============================================ */
 @media (max-width: 640px) {
   .prose {
     font-size: 0.9rem;
@@ -38,7 +60,8 @@ body {
   .prose code {
     font-size: 0.8rem !important;
   }
-  .prose ul, .prose ol {
+  .prose ul,
+  .prose ol {
     padding-left: 1.25rem !important;
   }
   .prose li {
@@ -46,22 +69,25 @@ body {
   }
 }
 
-/* Biar code block gak overflow ke kanan */
+/* ============================================
+   Code Block Styles (Prevent Overflow)
+   ============================================ */
 .prose pre {
-  overflow-x: auto !important;
-  white-space: pre-wrap !important;
-  word-break: break-word !important;
-  max-width: 100% !important;
+  overflow-x: auto !important;        /* Enable horizontal scroll if needed */
+  white-space: pre-wrap !important;   /* Wrap long lines */
+  word-break: break-word !important;  /* Break long words */
+  max-width: 100% !important;         /* Prevent overflow */
   font-size: 0.8rem !important;
   padding: 1rem !important;
 }
 
+/* Inline code */
 .prose code {
   white-space: pre-wrap !important;
   word-break: break-word !important;
 }
 
-/* Khusus inline code */
+/* Inline code (not inside pre tag) */
 .prose :not(pre) > code {
   white-space: normal !important;
   word-break: break-word !important;
