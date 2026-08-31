@@ -92,3 +92,15 @@ body {
   white-space: normal !important;
   word-break: break-word !important;
 }
+
+/* Link di konten blog (biru) */
+.prose a {
+  color: #2563eb !important;  /* Biru (Tailwind blue-600) */
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose a:hover {
+  color: #1d4ed8 !important;  /* Biru lebih gelap (blue-700) */
+}
+
