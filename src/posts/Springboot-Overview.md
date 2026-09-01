@@ -1,10 +1,10 @@
 ---
 title: "Spring Boot Overview"
-description: "For every experience that shaped me, every lesson that meant something, every time that has passed, and every opportunity yet to come—thank you."
-date: "2026-01-01"
+description: "Ikhtisar menyeluruh tentang dokumentasi referensi Spring Boot. Panduan ini memberikan gambaran besar tentang fitur-fitur utama, alur belajar, dan berbagai topik penting yang perlu kita ketahui sebelum mulai mengembangkan aplikasi dengan Spring Boot."
+date: "2026-04-07"
 author: "Farich Murobic"
 tags: ["springboot", "java", "overview", "learning"]
-image: "/assets/images/posts/thumbnail/Journey.png"
+image: "/assets/images/posts/thumbnail/Spring Boot.png"
 ---
 
 # Spring Boot Overview
