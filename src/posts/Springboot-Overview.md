@@ -7,17 +7,17 @@ tags: ["springboot", "java", "overview", "learning"]
 image: "/assets/images/posts/thumbnail/Spring Boot.png"
 ---
 
-# Spring Boot Overview
+**# Spring Boot Overview**
 
-<div style="font-style: italic; padding-left: 16px; border-left: 4px solid #ccc;" class="text-sm sm\:text-base text-neutral-700 dark\:text-neutral-300 border-neutral-300 dark\:border-neutral-600">
+\<div style="font-style: italic; padding-left: 16px; border-left: 4px solid #ccc;" class="text-sm sm\:text-base text-neutral-700 dark\:text-neutral-300 border-neutral-300 dark\:border-neutral-600">
 
-  <p class="mt-2 font-bold">Spring Boot memiliki ruang pembahasan yang cukup luas. Karena itu, sebelum masuk lebih jauh ke dalam setiap fitur dan konsepnya, saya ingin terlebih dahulu melihat gambaran besarnya. Bagi saya, bagian ini bukanlah tutorial teknis, melainkan sebuah peta untuk memahami bagaimana Spring Boot disusun, apa yang menjadi fokus utamanya, dan bagaimana berbagai bagian di dalamnya saling berhubungan.</p>
+  \<p class="mt-2 font-bold">Spring Boot memiliki ruang pembahasan yang cukup luas. Karena itu, sebelum masuk lebih jauh ke dalam setiap fitur dan konsepnya, saya ingin terlebih dahulu melihat gambaran besarnya. Bagi saya, bagian ini bukanlah tutorial teknis, melainkan sebuah peta untuk memahami bagaimana Spring Boot disusun, apa yang menjadi fokus utamanya, dan bagaimana berbagai bagian di dalamnya saling berhubungan.\</p>
 
-  <p class="mt-2 font-bold">Dokumentasi resmi Spring Boot sendiri memiliki cakupan yang luas, mulai dari langkah awal, pengembangan aplikasi, fitur-fitur inti, web, data, messaging, hingga deployment dan berbagai topik lanjutan. Jadi, daripada langsung masuk ke detail implementasi, saya akan melihat Spring Boot dari sudut pandang yang lebih umum terlebih dahulu—memahami apa yang ditawarkan, mengapa ia digunakan, dan bagaimana saya dapat menempatkan setiap konsepnya dalam satu gambaran yang utuh.</p>
+  \<p class="mt-2 font-bold">Dokumentasi resmi Spring Boot sendiri memiliki cakupan yang luas, mulai dari langkah awal, pengembangan aplikasi, fitur-fitur inti, web, data, messaging, hingga deployment dan topik lanjutan. Jadi, daripada langsung masuk ke detail implementasi, saya akan melihat Spring Boot dari sudut pandang yang lebih umum terlebih dahulu—memahami apa yang ditawarkan, mengapa ia digunakan, dan bagaimana saya dapat menempatkan setiap konsepnya dalam satu gambaran yang utuh.\</p>
 
-  <p class="mt-2 font-bold">Jika setelah membaca bagian ini Anda ingin mendalami aspek teknis tertentu, saya sangat menyarankan untuk merujuk langsung ke <a href="https://docs.spring.io/spring-boot/reference/" target="_blank" rel="noopener noreferrer">dokumentasi resmi Spring Boot</a>. Dokumentasi tersebut merupakan referensi utama yang mengikuti perkembangan versi Spring Boot dan menyediakan pembahasan yang jauh lebih lengkap mengenai setiap fitur dan kemampuan yang tersedia.</p>
+  \<p class="mt-2 font-bold">Jika setelah membaca bagian ini Anda ingin mendalami aspek teknis tertentu, saya sangat menyarankan untuk merujuk langsung ke \<a href="[https://docs.spring.io/spring-boot/reference/](https://docs.spring.io/spring-boot/reference/)" target="\_blank" rel="noopener noreferrer">dokumentasi resmi Spring Boot\</a>. Dokumentasi tersebut merupakan referensi utama yang mengikuti perkembangan versi Spring Boot dan menyediakan pembahasan yang jauh lebih lengkap mengenai setiap fitur dan kemampuan yang tersedia.\</p>
 
-</div>
+\</div>
 
 ---
 
